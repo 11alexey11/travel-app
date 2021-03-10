@@ -6,8 +6,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
 
-  body, p { 
+  body, p {
     margin: 0;
+  }
+
+  ul {
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
   }
 
   .card-title {
@@ -32,6 +40,17 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     border-top-right-radius: 20px 12px;
     border-bottom-left-radius: 7px 7px;
+  }
+
+  .footer-year {
+    align-self: end;
+  }
+
+  .footer-wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
   }
 `;
 
