@@ -32,8 +32,6 @@ const Main: React.FC<MainProps> = ({ data }) => {
 }
 
 const mapStateToProps = (state: AppState) => {
-  console.log(state.data);
-
   return {
     data: state.data
   };

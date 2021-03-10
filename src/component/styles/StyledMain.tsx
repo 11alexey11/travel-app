@@ -4,6 +4,7 @@ const StyledMain = styled.main`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 30px;
   background-color: #eceff1;
 `
 
