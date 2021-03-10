@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import reducer from './reducer/reducer';
 import thunk from 'redux-thunk';
 
-import App from "./App/App";
+import App from "./component/App/App";
 
 import ActionCreator from './action-creator/action-creator';
 import getData from "./service";
@@ -13,16 +13,12 @@ import getData from "./service";
 const store = createStore(
   reducer,
   compose(
-      applyMiddleware(thunk),
-      (window as any).__REDUX_DEVTOOLS_EXTENSION__ ? (window as any).__REDUX_DEVTOOLS_EXTENSION__() : (f: any) => f
+    applyMiddleware(thunk),
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__ ? (window as any).__REDUX_DEVTOOLS_EXTENSION__() : (f: any) => f
   )
 );
 
-const get = () => {
-  return getData().then((response) => ActionCreator.getData(response));
-}
-
-store.dispatch(get());
+store.dispatch(ActionCreator.getData(getData));
 
 ReactDOM.render(
   <Provider store={store}>

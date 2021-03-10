@@ -1,15 +1,14 @@
 const initialState = {
-  data: null
+  data: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case `GET_DATA`:
-      console.log(action.payload);
       return {
         ...state,
-        data: action.payload
-      }
+        data: action.payload,
+      };
     default:
       return state;
   }
