@@ -18,6 +18,37 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  header { 
+    position: relative;
+  }
+
+  .header-text-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 80px;
+    min-width: 600px;
+    color: #fff;
+  }
+
+  .header-title {
+    font-size: 5.5rem;
+    font-family: 'Cuprum', sans-serif;
+  }
+
+  .header-slogan {
+    font-size: rem;
+    font-size: 3.3rem;
+    font-family: 'Lobster', cursive;
+  }
+
+  .header-cutter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url('./img/header-cutter.png') center no-repeat;
+  }
+
   .card-title {
     margin-bottom: 8px ;
     font-size: 1.3rem;
