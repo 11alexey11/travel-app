@@ -1,4 +1,4 @@
-const url : string = `https://travel-app-demo.herokuapp.com/countries`;
+const url : string = `https://travel-application-backend.herokuapp.com/countries/ru`;
 
 const getData = async () : Promise<Array<Object>> => {
   const res = await fetch(`${url}`);

@@ -6,16 +6,18 @@ interface CountryProps {
   capital: string;
   imgUrl: string,
   key: string,
-  name: string
+  name: string,
+  onCountyCardClick: () => void
 }
 
-const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, name }) => {
+const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, name, onCountyCardClick }) => {
   return (
-    <StyledCard>
-      <p className="card-title">{name}</p>
+    <StyledCard onClick={onCountyCardClick}>
+      <div className="card-mask"></div>
+      <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
       <div className="card-info-wrapper">
-        <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
-        <p className="card-capital">Capital: {capital}</p>
+        <p className="card-title">{name}</p>
+        <p className="card-capital">Столица: {capital}</p>
       </div>
     </StyledCard>
   )
