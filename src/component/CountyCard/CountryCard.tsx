@@ -12,9 +12,10 @@ interface CountryProps {
 const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, name }) => {
   return (
     <StyledCard>
-      <p className="card-title">{name}</p>
+      <div className="card-mask"></div>
+      <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
       <div className="card-info-wrapper">
-        <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
+        <p className="card-title">{name}</p>
         <p className="card-capital">Capital: {capital}</p>
       </div>
     </StyledCard>

@@ -11,22 +11,62 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ data }) => {
+  const monthNames: string[] = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  const date: Date = new Date();
+
   if (data === null) {
     return <div>Loading...</div>;
   }
 
   return (
     <StyledMain>
-      {data.map((country: any) => {
-        return (
-          <CountryCard
-            capital={country.capital}
-            imgUrl={country.imageUrl}
-            key={country.id}
-            name={country.name}
-          />
-        )
-      })}
+      <div className="cards-title-wrapper">
+        <h1 className="cards-title">Top Destinations</h1>
+        <p className="cards-description">The most searched countries in {monthNames[date.getMonth()]}</p>
+      </div>
+      <div className="cards-wrapper">
+        {data.map((country: any) => {
+          return (
+            <CountryCard
+              capital={country.capital}
+              imgUrl={country.imageUrl}
+              key={country.id}
+              name={country.name}
+            />
+          )
+        })}
+        {data.map((country: any) => {
+          return (
+            <CountryCard
+              capital={country.capital}
+              imgUrl={country.imageUrl}
+              key={country.id}
+              name={country.name}
+            />
+          )
+        })}
+        {data.map((country: any) => {
+          return (
+            <CountryCard
+              capital={country.capital}
+              imgUrl={country.imageUrl}
+              key={country.id}
+              name={country.name}
+            />
+          )
+        })}
+        {data.map((country: any) => {
+          return (
+            <CountryCard
+              capital={country.capital}
+              imgUrl={country.imageUrl}
+              key={country.id}
+              name={country.name}
+            />
+          )
+        })}
+      </div>
     </StyledMain>
   )
 }

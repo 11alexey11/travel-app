@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   .header-text-wrapper {
     position: absolute;
     top: 30%;
-    left: 80px;
+    left: 8%;
     min-width: 600px;
     color: #fff;
   }
@@ -49,30 +49,59 @@ const GlobalStyle = createGlobalStyle`
     background: url('./img/header-cutter.png') center no-repeat;
   }
 
+  .cards-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards-title {
+    margin: 25px 0 20px 0;
+    font-size: 2.2rem;
+  }
+
+  .cards-description {
+    font-size: 1.2rem;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
   .card-title {
-    margin-bottom: 8px ;
+    margin-bottom: 8px;
     font-size: 1.3rem;
     font-weight: 600;
   }
 
   .card-info-wrapper {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 25px 3px 10px;
+    color: #fff;
   }
 
   .card-img {
-    border-radius: 7px;
+    height: 263px;
+    border-radius: 2px;
   }
 
-  .card-capital {
+  .card-mask {
     position: absolute;
-    bottom: 6px;
-    padding: 10px 25px 3px 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border-top-right-radius: 20px 12px;
-    border-bottom-left-radius: 7px 7px;
-  }
+    width: 100%;
+    height: 263px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(54,54,54,0.12088585434173671) 41%, rgba(255,255,255,0) 100%);
 
+    opacity: 0.2;
+  }
+  
   .footer-year {
     align-self: end;
   }
