@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     <StyledHeader>
       <div className="header-text-wrapper">
         <p className="header-title">Travel App</p>
-        <p className="header-slogan">Discover. Explore. Admire.</p>
+        <p className="header-slogan">Открой. Исследуй. Восхищайся.</p>
       </div>
       <div className="header-cutter">
       </div>

@@ -5,6 +5,7 @@ import StyledFooter from '../styles/StyledFooter';
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
+      <div className="footer-mask"></div>
       <div className="footer-wrapper">
         <ul>
           <li>
@@ -20,10 +21,10 @@ const Footer: React.FC = () => {
             <a href="https://github.com/urazof">urazof</a>
           </li>
         </ul>
-        <p className="footer-year">© 2021 Travel App</p>
-        <div>
+        <div className="footer-bottom">
+          <p className="footer-year">© 2021 Travel App</p>
           <a href="https://rs.school/js/">
-            <img src="../../assets/rs_school.svg" alt="RS School" />
+            <img src="./img/rs_school.svg" alt="RS School" width="80px" />
           </a>
         </div>
       </div>

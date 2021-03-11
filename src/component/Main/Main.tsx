@@ -11,8 +11,8 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ data }) => {
-  const monthNames: string[] = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
+  const monthNames: string[] = ["Январе", "Феврале", "Марте", "Апреле", "Мае", "Июне",
+    "Июле", "Августе", "Сентябре", "Октябре", "Ноябре", "Декабре"];
   const date: Date = new Date();
 
   if (data === null) {
@@ -22,47 +22,17 @@ const Main: React.FC<MainProps> = ({ data }) => {
   return (
     <StyledMain>
       <div className="cards-title-wrapper">
-        <h1 className="cards-title">Top Destinations</h1>
-        <p className="cards-description">The most searched countries in {monthNames[date.getMonth()]}</p>
+        <h1 className="cards-title">Лучшие направления</h1>
+        <p className="cards-description">Наиболее популярные страны в {monthNames[date.getMonth()]}</p>
       </div>
       <div className="cards-wrapper">
         {data.map((country: any) => {
           return (
             <CountryCard
               capital={country.capital}
-              imgUrl={country.imageUrl}
+              imgUrl={country.photoUrl}
               key={country.id}
-              name={country.name}
-            />
-          )
-        })}
-        {data.map((country: any) => {
-          return (
-            <CountryCard
-              capital={country.capital}
-              imgUrl={country.imageUrl}
-              key={country.id}
-              name={country.name}
-            />
-          )
-        })}
-        {data.map((country: any) => {
-          return (
-            <CountryCard
-              capital={country.capital}
-              imgUrl={country.imageUrl}
-              key={country.id}
-              name={country.name}
-            />
-          )
-        })}
-        {data.map((country: any) => {
-          return (
-            <CountryCard
-              capital={country.capital}
-              imgUrl={country.imageUrl}
-              key={country.id}
-              name={country.name}
+              name={country.country}
             />
           )
         })}

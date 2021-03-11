@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  padding: 10px 0;
-  background-color: #42a5f5;
+  height: 25vh;
+  position: relative;
+  background: url('./img/header-background.jpg') center no-repeat; 
+  background-color: #00695c;
 `
 
 export default StyledFooter;

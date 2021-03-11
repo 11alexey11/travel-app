@@ -8,11 +8,11 @@ const StyledCard = styled.div`
   width: 393.3px;
   margin-bottom: 10px;
 
-  &:nth-child(1) {
+  &:nth-child(4) {
     width: 490px;
   }
 
-  &:nth-child(2) {
+  &:nth-child(5) {
     width: 700px;
   }
 `

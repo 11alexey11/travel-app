@@ -16,7 +16,7 @@ const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, name }) => {
       <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
       <div className="card-info-wrapper">
         <p className="card-title">{name}</p>
-        <p className="card-capital">Capital: {capital}</p>
+        <p className="card-capital">Столица: {capital}</p>
       </div>
     </StyledCard>
   )
