@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import StyledCountriesList from '../styles/StyledCountriesList';
@@ -16,12 +16,6 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
   const monthNames: string[] = ["Январе", "Феврале", "Марте", "Апреле", "Мае", "Июне",
     "Июле", "Августе", "Сентябре", "Октябре", "Ноябре", "Декабре"];
   const date: Date = new Date();
-
-  const onCountyCardClick = (index: number) => {
-    console.log(history);
-    
-    
-  }
 
   if (data === null) {
     return <div>Loading...</div>;

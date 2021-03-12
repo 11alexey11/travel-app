@@ -7,6 +7,7 @@ const StyledCard = styled.div`
   position: relative;
   width: 393.3px;
   margin-bottom: 10px;
+  cursor: pointer;
 
   &:nth-child(4) {
     width: 490px;

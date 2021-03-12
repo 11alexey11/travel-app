@@ -9,8 +9,7 @@ const Header: React.FC = () => {
         <p className="header-title">Travel App</p>
         <p className="header-slogan">Открой. Исследуй. Восхищайся.</p>
       </div>
-      <div className="header-cutter">
-      </div>
+      <div className="header-cutter"></div>
     </StyledHeader>
   )
 }

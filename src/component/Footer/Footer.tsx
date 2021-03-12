@@ -6,27 +6,29 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <div className="footer-mask"></div>
-      <div className="footer-wrapper">
-        <ul>
+      <div className="footer-cutter"></div>
+      <div className="authors-wrapper">
+        <h2 className="authors-title">Авторы:</h2>
+        <ul className="authors">
           <li>
-            <a href="https://github.com/11alexey11">11alexey11</a>
+            <a className="author" href="https://github.com/11alexey11">11alexey11</a>
           </li>
           <li>
-            <a href="https://github.com/alekseishkel">alekseishkel</a>
+            <a className="author" href="https://github.com/alekseishkel">alekseishkel</a>
           </li>
           <li>
-            <a href="https://github.com/danila-cmd">danila-cmd</a>
+            <a className="author" href="https://github.com/danila-cmd">danila-cmd</a>
           </li>
           <li>
-            <a href="https://github.com/urazof">urazof</a>
+            <a className="author" href="https://github.com/urazof">urazof</a>
           </li>
         </ul>
-        <div className="footer-bottom">
-          <p className="footer-year">© 2021 Travel App</p>
-          <a href="https://rs.school/js/">
-            <img src="./img/rs_school.svg" alt="RS School" width="80px" />
-          </a>
-        </div>
+      </div>
+      <div className="footer-bottom">
+        <p className="footer-year">© 2021 Travel App</p>
+        <a className="footer-rs-school" href="https://rs.school/js/">
+          <img src="./img/rs_school.svg" alt="RS School" width="80px" />
+        </a>
       </div>
     </StyledFooter>
   )
