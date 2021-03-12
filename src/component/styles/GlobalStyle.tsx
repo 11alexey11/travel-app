@@ -105,29 +105,76 @@ const GlobalStyle = createGlobalStyle`
     align-self: end;
   }
 
-  .footer-wrapper {
-    width: 70%;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
   .footer-bottom {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
     width: 100%;
+    min-height: 35px;
     padding-bottom: 5px;
+    background: rgba(0, 105, 92, 0.9);
     color: #fff;
+  }
+  
+  .footer-rs-school {
+    position: absolute;
+    right: 23%;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+
+  .footer-year {
+    align-self: flex-end;
   }
 
   .footer-mask {
     position: absolute;
     width: 100%;
-    height: 25vh;
+    height: 300px;
     background: rgba(0, 105, 92, 0.6);
+  }
+
+  .footer-cutter {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: url('./img/footer-cutter.png') center no-repeat;
+  }
+
+  .authors-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    height: 300px;
+    position: relative;
+    z-index: 100;
+    margin: 0 auto;
+  }
+
+  .authors-title {
+    margin: 0;
+    margin-top: 80px;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+
+  .authors {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: frap;
+    width: 530px;
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .author {
+    color: #fff;
   }
 `;
 

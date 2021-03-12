@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -10,14 +10,12 @@ const App: React.FC = () => {
   return (
     <>
       <Router>
-      <Switch>
         <GlobalStyle />
         <Header />
 
-        <Route exact path="/" component={СountriesList}/>
+        <Route exact path="/" component={СountriesList} />
 
         <Footer />
-      </Switch>
       </Router>
     </>
   )
