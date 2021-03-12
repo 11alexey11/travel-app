@@ -5,10 +5,9 @@ import { Provider } from 'react-redux';
 import reducer from './reducer/reducer';
 import thunk from 'redux-thunk';
 
-import App from "./component/App/App";
-
 import ActionCreator from './action-creator/action-creator';
 import getData from "./service";
+import AppContainer from "./component/App/AppContainer";
 
 const store = createStore(
   reducer,
@@ -22,6 +21,6 @@ store.dispatch(ActionCreator.getData(getData));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById(`root`));

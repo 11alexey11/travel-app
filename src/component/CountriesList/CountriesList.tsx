@@ -35,7 +35,7 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
               imgUrl={country.photoUrl}
               key={country.id}
               name={country.country}
-              onCountyCardClick={() => history.push(`${"/" + i}`)}
+              onCountyCardClick={() => history.push(`/${i}`)}
             />
           )
         })}
