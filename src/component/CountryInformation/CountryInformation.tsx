@@ -1,11 +1,9 @@
 import React from 'react';
+import 'swiper/swiper-bundle.min.css';
 import styles from './CountryInformation.module.css';
+import './swiper.css'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/swiper-bundle.css';
-// import './swiper.css';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -37,13 +35,13 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
                     onSlideChange={() => console.log('slide change')}
                 >
                     {
-                        country.attractions.map((item: any) => {
+                        country.attractions.map((item: any, i: number) => {
                             return (
-                                <SwiperSlide >
+                                <SwiperSlide key={i}>
                                     <div>
                                         <img src={item.photoUrl} alt={item.name}></img>
-                                        <h4>{item.name}</h4>
-                                        <p>{item.info}</p>
+                                        {/* <h4>{item.name}</h4>
+                                        <p>{item.info}</p> */}
                                     </div>
                                 </SwiperSlide>
                             )
