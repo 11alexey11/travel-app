@@ -13,53 +13,57 @@ interface CountryInformationProps {
 }
 
 const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
-    console.log(country);
+
     return (
         <main className={styles.countryWrapper}>
-            <div className={styles.countryInfo}>
-                <img src={country.photoUrl} alt={country.country} />
-                <p>{country.country}</p>
-                <p>{`Столица: ${country.capital}`}</p>
-            </div>
-            <div>
-                <p>{country.info}</p>
-            </div>
-            <div>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{ clickable: true }}
-                    scrollbar={{ draggable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
-                >
-                    {
-                        country.attractions.map((item: any, i: number) => {
-                            return (
-                                <SwiperSlide key={i}>
-                                    <div>
-                                        <img src={item.photoUrl} alt={item.name}></img>
-                                        {/* <h4>{item.name}</h4>
-                                        <p>{item.info}</p> */}
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })
-                    }
-                </Swiper>
-            </div>
-            <div>
+            <div className={styles.content} >
+                <div className={styles.countryInfoContainer}>
+                    <div className={styles.card}>
+                        <img className={styles.photo} src={country.photoUrl} alt={country.country} />
+                        <div className={styles.infoContainer}>
+                            <p>{country.country}</p>
+                            <p>{`Столица: ${country.capital}`}</p>
+                        </div>
+                    </div>
+                    <div className={styles.countryContainer}>
+                        <p>{country.info}</p>
+                    </div>
+                </div>
+                <div>
+                    <Swiper
+                        loop={true}
+                        speed={500}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                    >
+                        {
+                            country.attractions.map((item: any, i: number) => {
+                                return (
+                                    <SwiperSlide key={i}>
+                                        <img className={styles.photo} src={item.photoUrl} alt={item.name}></img>
+                                        <h4>{item.name}</h4>
+                                        <p >{item.info}</p>
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
+                    </Swiper>
+                </div>
+                <div>
 
-            </div>
-            <div>
+                </div>
+                <div>
 
-            </div>
-            <div>
+                </div>
+                <div>
 
-            </div>
-            <div>
+                </div>
+                <div>
 
+                </div>
             </div>
         </main>
     );

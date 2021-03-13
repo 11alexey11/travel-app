@@ -1,7 +1,32 @@
 .countryWrapper {
+    width: 100%;
+}
+
+.content {
+    padding: 20px 15%;
+    font-size: 20px;
+}
+
+.countryInfoContainer {
     display: flex;
-    flex-direction: column;
-    /* flex-direction: column;
     align-items: center;
-    justify-content: center; */
+}
+
+.card {
+    position: relative;
+}
+
+.infoContainer {
+    position: absolute;
+    color: #FFFFFF;
+    bottom: 0;
+    padding: 10px 25px 10px 10px;;
+}
+
+.countryContainer {
+    padding: 10px;
+}
+
+.swiperSlideContainer {
+    padding: 0 100px;
 }
