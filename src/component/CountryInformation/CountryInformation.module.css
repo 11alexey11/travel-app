@@ -1,11 +1,59 @@
 .countryWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
 }
 
-.countryInfo {
+.content {
+    padding: 20px 15%;
+    font-size: 20px;
+}
 
+.countryInfoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+}
+
+.infoContainer {
+    position: absolute;
+    color: #FFFFFF;
+    bottom: 0;
+    padding: 10px 25px 10px 10px;;
+}
+
+.countryContainer {
+    padding: 10px;
+}
+
+.swiperSlideContainer {
+    padding: 0 100px;
+}
+
+.videoMapContainer {
+    display: flex;
+    padding: 15px 0;
+}
+
+.videoContainer {
+    width: 50%;
+    padding-right: 10px;
+    height: 360px;
+}
+
+.mapContainer {
+    width: 50%;
+    padding-left: 10px;
+    height: 360px;
+}
+
+.widgetsContainer {
+    display: flex;
+}
+
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
