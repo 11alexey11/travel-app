@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StyledCard from '../styles/StyledCard';
+import styles from './CountryCard.module.css';
 
 interface CountryProps {
   capital: string;
@@ -12,14 +12,14 @@ interface CountryProps {
 
 const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, name, onCountyCardClick }) => {
   return (
-    <StyledCard onClick={onCountyCardClick}>
-      <div className="card-mask"></div>
-      <img className="card-img" src={imgUrl} alt={"Photo of " + name} width="100%" />
-      <div className="card-info-wrapper">
-        <p className="card-title">{name}</p>
-        <p className="card-capital">Столица: {capital}</p>
+    <div className={styles.countryCard} onClick={onCountyCardClick}>
+      <div className={styles.cardMask}></div>
+      <img className={styles.cardImg} src={imgUrl} alt={"Photo of " + name} width="100%" />
+      <div className={styles.cardInfoWrapper}>
+        <p className={styles.cardTitle}>{name}</p>
+        <p className={styles.cardCapital}>Столица: {capital}</p>
       </div>
-    </StyledCard>
+    </div>
   )
 }
 

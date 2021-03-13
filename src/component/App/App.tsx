@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import СountriesList from '../CountriesList/CountriesList';
-import GlobalStyle from '../styles/GlobalStyle';
+import GlobalStyle from './GlobalStyle';
 import CountryInformation from '../CountryInformation/CountryInformation';
 
 interface AppProps {
