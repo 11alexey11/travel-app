@@ -2,6 +2,45 @@
   position: relative;
 }
 
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 70%;
+  min-height: 65px;
+  margin: 0 auto;
+  padding: 0 30px;
+  border-bottom: 3px solid #fff;
+  z-index: 10;
+}
+
+.headerTopMask {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(128,128,128,0) 100%); 
+  opacity: 0.7;
+}
+
+.headerLang {
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  outline: none;
+  appearance:none;
+  
+}
+
+.headerIcon {
+  fill: #fff;
+}
+
 .headerTextWrapper {
   position: absolute;
   top: 30%;
