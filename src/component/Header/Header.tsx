@@ -1,15 +1,17 @@
 import React from 'react';
 
-import StyledHeader from '../styles/StyledHeader';
+import StyledHeader from './StyledHeader';
+import StyledHeaderCutter from './StyledHeaderCutter';
+import styles from './Header.module.css';
 
 const Header: React.FC = () => {
   return (
-    <StyledHeader>
-      <div className="header-text-wrapper">
-        <p className="header-title">Travel App</p>
-        <p className="header-slogan">Открой. Исследуй. Восхищайся.</p>
+    <StyledHeader className={styles.header}>
+      <div className={styles.headerTextWrapper}>
+        <p className={styles.headerTitle}>Travel App</p>
+        <p className={styles.headerSlogan}>Открой. Исследуй. Восхищайся.</p>
       </div>
-      <div className="header-cutter"></div>
+      <StyledHeaderCutter />
     </StyledHeader>
   )
 }

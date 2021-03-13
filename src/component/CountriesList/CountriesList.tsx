@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import StyledCountriesList from '../styles/StyledCountriesList';
+import styles from './CountriesList.module.css';
 import CountryCard from '../CountyCard/CountryCard';
 
 import { AppState } from '../../interfaces';
@@ -22,12 +22,12 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
   }
 
   return (
-    <StyledCountriesList>
-      <div className="cards-title-wrapper">
-        <h1 className="cards-title">Лучшие направления</h1>
-        <p className="cards-description">Наиболее популярные страны в {monthNames[date.getMonth()]}</p>
+    <div className={styles.countriesList}>
+      <div className={styles.cardsTitleWrapper}>
+        <h1 className={styles.cardsTitle}>Лучшие направления</h1>
+        <p className={styles.cardsDescription}>Наиболее популярные страны в {monthNames[date.getMonth()]}</p>
       </div>
-      <div className="cards-wrapper">
+      <div className={styles.cardsWrapper}>
         {data.map((country: any, i: number) => {
           return (
             <CountryCard
@@ -40,7 +40,7 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
           )
         })}
       </div>
-    </StyledCountriesList>
+    </div>
   )
 }
 
