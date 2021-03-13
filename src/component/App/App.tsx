@@ -8,10 +8,10 @@ import GlobalStyle from './GlobalStyle';
 import CountryInformation from '../CountryInformation/CountryInformation';
 
 interface AppProps {
-  data: Array<Object>
+  countries: Array<Object>
 }
 
-const App: React.FC<AppProps> = ({data}) => {
+const App: React.FC<AppProps> = ({countries}) => {
   return (
     <>
       <Router>
@@ -21,7 +21,7 @@ const App: React.FC<AppProps> = ({data}) => {
         <Route exact path="/" component={СountriesList} />
 
         {
-          data.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i}`} render={ () => <CountryInformation country={item} />} />))
+          countries.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i}`} render={ () => <CountryInformation country={item} />} />))
         }
 
         <Footer />

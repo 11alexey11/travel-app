@@ -22,7 +22,7 @@
   height: 65px;
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(128,128,128,0) 100%); 
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .headerLang {

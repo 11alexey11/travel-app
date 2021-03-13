@@ -7,17 +7,19 @@ import CountryCard from '../CountyCard/CountryCard';
 
 import { AppState } from '../../interfaces';
 
-interface MainProps {
-  data: Array<Object>;
+interface CountriesProps {
+  countries: Array<Object>;
   history: any
 }
 
-const CountriesList: React.FC<MainProps> = ({ data, history }) => {
+const CountriesList: React.FC<CountriesProps> = ({ countries, history }) => {
   const monthNames: string[] = ["Январе", "Феврале", "Марте", "Апреле", "Мае", "Июне",
     "Июле", "Августе", "Сентябре", "Октябре", "Ноябре", "Декабре"];
   const date: Date = new Date();
 
-  if (data === null) {
+  // add loader
+
+  if (countries === null) {
     return <div>Loading...</div>;
   }
 
@@ -28,7 +30,7 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
         <p className={styles.cardsDescription}>Наиболее популярные страны в {monthNames[date.getMonth()]}</p>
       </div>
       <div className={styles.cardsWrapper}>
-        {data.map((country: any, i: number) => {
+        {countries.map((country: any, i: number) => {
           return (
             <CountryCard
               capital={country.capital}
@@ -46,7 +48,7 @@ const CountriesList: React.FC<MainProps> = ({ data, history }) => {
 
 const mapStateToProps = (state: AppState) => {
   return {
-    data: state.data
+    countries: state.countries
   };
 };
 
