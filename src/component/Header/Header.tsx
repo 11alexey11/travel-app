@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import LanguagePannel from '../LanguagePanel/LanguagePanel';
 import SearchPannel from '../SearchPanel/SearchPanel';
 
 import StyledHeader from './StyledHeader';
@@ -18,11 +19,7 @@ const Header: React.FC = () => {
           </svg>
         </Link>
         <SearchPannel />
-        <select className={styles.headerLang} name="language">
-          <option className={styles.opt} value="ru">ru</option>
-          <option value="en">en</option>
-          <option value="fr">fr</option>
-        </select>
+        <LanguagePannel />
       </div>
       <div className={styles.headerTextWrapper}>
         <p className={styles.headerTitle}>Travel App</p>

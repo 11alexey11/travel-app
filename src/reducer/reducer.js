@@ -1,10 +1,16 @@
 const initialState = {
   data: [],
-  countries: []
+  countries: [],
+  language: "ru"
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case `CHANGE_LANGUAGE`:
+      return {
+        ...state,
+        language: action.payload,
+      };
     case `GET_DATA`:
       return {
         ...state,

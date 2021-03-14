@@ -38,9 +38,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
             .then(res => res.json())
             .then(data => setWeather(data));
 
-        fetch(currencyURL)
-            .then(res => res.json())
-            .then(data => setCurrency(data.rates[country.currencyCode]));
+        
     }, [country]);
 
     useEffect(() => {
