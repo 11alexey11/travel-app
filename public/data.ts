@@ -14,6 +14,7 @@ const countriesRu = [
     {
         id: idRussia,
         photoUrl: 'https://s1.1zoom.ru/prev/431/430286.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=9RfuxVZdtjY',
         country: 'Россия',
         capital: 'Москва',
         info: 'Россия – крупнейшая страна мира, расположенная в Восточной Европе и Северной Азии и омываемая водами Тихого и Северного Ледовитого океанов. Ландшафт России крайне разнообразен: на ее территории есть и тундра, и леса, и субтропические пляжи. В Большом театре в Москве и Мариинском театре в Санкт-Петербурге выступают балетные труппы, снискавшие всемирную славу. Санкт-Петербург, основанный императором Петром I, известен своим Зимним дворцом в стиле барокко, в котором размещается часть обширной художественной коллекции музея "Эрмитаж".',
@@ -43,6 +44,7 @@ const countriesRu = [
     {
         id: idEngland,
         photoUrl: 'https://static9.depositphotos.com/1611230/1080/i/450/depositphotos_10800421-stock-photo-big-ben-with-red-double.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=0FtFHGtBPe8',
         country: 'Великобритания',
         capital: 'Лондон',
         info: 'Великобритания (официальное название – Соединенное Королевство Великобритании и Северной Ирландии) – островное государство на северо-западе Европы, состоящее из Англии, Шотландии, Уэльса и Северной Ирландии. В Англии, на родине Шекспира и группы The Beatles, находится столица государства Лондон – мировой деловой и культурный центр. Также страна известна неолитическим сооружением Стоунхендж, римскими банями в городе Бат и старинными университетами в Оксфорде и Кембридже.',
@@ -72,6 +74,7 @@ const countriesRu = [
     {
         id: idItaly,
         photoUrl: 'https://static3.depositphotos.com/1000135/100/i/450/depositphotos_1007618-stock-photo-empty.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=hMpDo_Th-qA',
         country: 'Италия',
         capital: 'Рим',
         info: 'Италия – средиземноморское государство в Южной Европе с длинной береговой линией, которое оказало огромное влияние на западную культуру и кухню. На территории столицы страны, Рима, находится государство Ватикан, а также всемирно известные музеи и древние руины. Другие крупные города Италии – Флоренция, где можно увидеть шедевры эпохи Возрождения, например статую Давида работы Микеланджело и собор Дуомо, созданный по проекту архитектора Брунеллески, а также город каналов Венеция и столица моды Милан.',
@@ -101,6 +104,7 @@ const countriesRu = [
     {
         id: idUSA,
         photoUrl: 'https://www.timeturk.com/resim/detay/75/756540.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=yWWIq54qFOY',
         country: 'США',
         capital: 'Вашингтон',
         info: 'Соединенные Штаты Америки – государство, состоящее из 50 штатов, занимает значительную часть Северной Америки. Штат Аляска расположен на северо-западе континента, а Гавайи – в Тихом океане. К крупным городам атлантического побережья относятся Нью-Йорк и столица Вашингтон. К западу от них находится ещё один важный город – Чикаго, известный своей впечатляющей архитектурой. А на западном побережье расположен Лос-Анджелес со знаменитыми голливудскими киностудиями.',
@@ -130,6 +134,7 @@ const countriesRu = [
     {
         id: idSpain,
         photoUrl: 'https://s1.1zoom.ru/prev/514/Spain_Houses_Seville_Spanish_Square_Maria_Luisa_513276_600x400.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=pMrXf02udxk',
         country: 'Испания',
         capital: 'Мадрид',
         info: 'Испания – европейская страна, расположенная на Пиренейском полуострове. Территория Испании разделена на 17 автономных регионов. В столице страны, Мадриде, находятся Королевский дворец и музей Прадо, где хранятся произведения европейских мастеров. В Сеговии можно посетить средневековый замок (Алькасар) и увидеть хорошо сохранившийся римский акведук. Барселона – столица автономного сообщества Каталония. Облик этого города определяют многочисленные причудливо-фантастические творения архитектора Антонио Гауди, среди которых храм Святого Семейства.',
@@ -159,6 +164,7 @@ const countriesRu = [
     {
         id: idFrance,
         photoUrl: 'https://img.rl0.ru/78a583f63053e1878722bcacf5476d2b/e600x400o-x0i/https/news.rambler.ru/img/2017/03/06202728.361626.2439.jpeg',
+        videoUrl: 'https://www.youtube.com/watch?v=a9Gu4fExojA',
         country: 'Франция',
         capital: 'Париж',
         info: 'Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря. Париж, столица государства, славится своими домами моды, старейшими художественными музеями, в числе которых Лувр, и достопримечательностями, такими как Эйфелева башня. Франция известна своими винами и изысканной кухней. Наскальная живопись в пещере Ласко, амфитеатр Трех Галлий в Лионе и огромный Версальский дворец свидетельствуют о богатой истории этих мест.',
@@ -188,6 +194,7 @@ const countriesRu = [
     {
         id: idChina,
         photoUrl: 'https://calendar.baby-club.ru/img/apr/k4.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=3xZk5oK35Uc',
         country: 'Китай',
         capital: 'Пекин',
         info: 'Китай – густонаселенная страна в Восточной Азии с разнообразными ландшафтами и рельефом. Здесь можно найти луга, пустыни, горы, озера, реки и побережья протяженностью более 14 тыс. км. Столица страны, Пекин, славится современной архитектурой и древними памятниками, среди которых дворцовый комплекс Запретный город и площадь Тяньаньмэнь. На востоке расположен мировой финансовый центр Шанхай, силуэт которого формируют бесчисленные небоскребы. По северному Китаю, пересекая его с востока на запад, проходит Великая Китайская стена.',
@@ -217,6 +224,7 @@ const countriesRu = [
     {
         id: idIndia,
         photoUrl: 'https://cdn-nus-1.pinme.ru/tumb/600/photo/bc/60/bc6053f77d1efd80f56744cf7d669d66.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=uXmXm73JYck',
         country: 'Индия',
         capital: 'Нью-Дели',
         info: 'Индия – огромная страна в Южной Азии с разнообразным рельефом: на ее территории расположены как горные вершины Гималаев, так и побережье Индийского океана. История страны насчитывает пять тысячелетий. На севере Индии сохранились архитектурные памятники эпохи Великих Моголов, в том числе Красный форт и мечеть Джами-Масджид (Соборная мечеть) в Дели и мавзолей Тадж-Махал в Агре. Город Варанаси известен как место паломничества индуистов, которые совершают омовение в Ганге, а Ришикеш – как центр йоги и отправная точка для походов в Гималаи.',
@@ -249,6 +257,7 @@ const countriesEn = [
     {
         id: idRussia,
         photoUrl: 'https://s1.1zoom.ru/prev/431/430286.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=9RfuxVZdtjY',
         country: 'Russia',
         capital: 'Moscow',
         info: 'Russia is the largest country in the world, located in Eastern Europe and North Asia and washed by the Pacific and Arctic Oceans. The landscape of Russia is extremely diverse: on its territory there are tundra, forests, and subtropical beaches. World-renowned ballet companies perform at the Bolshoi Theater in Moscow and the Mariinsky Theater in St. Petersburg. Founded by Emperor Peter I, St. Petersburg is famous for its Baroque Winter Palace, which houses part of the Hermitage Museum\'s extensive art collection.',
@@ -278,6 +287,7 @@ const countriesEn = [
     {
         id: idEngland,
         photoUrl: 'https://static9.depositphotos.com/1611230/1080/i/450/depositphotos_10800421-stock-photo-big-ben-with-red-double.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=0FtFHGtBPe8',
         country: 'Great Britain',
         capital: 'London',
         info: 'Great Britain (officially the United Kingdom of Great Britain and Northern Ireland) is an island state in northwestern Europe, consisting of England, Scotland, Wales and Northern Ireland. In England, the homeland of Shakespeare and the Beatles, is the capital of the state, London - the world business and cultural center. The country is also known for its Neolithic Stonehenge, Roman baths in Bath and ancient universities in Oxford and Cambridge.',
@@ -307,6 +317,7 @@ const countriesEn = [
     {
         id: idItaly,
         photoUrl: 'https://static3.depositphotos.com/1000135/100/i/450/depositphotos_1007618-stock-photo-empty.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=hMpDo_Th-qA',
         country: 'Italy',
         capital: 'Rome',
         info: 'Italy is a Mediterranean state in southern Europe with a long coastline that has had a huge impact on Western culture and cuisine. The capital of the country, Rome, is home to the Vatican State, as well as world-famous museums and ancient ruins. Other major cities in Italy are Florence, where Renaissance masterpieces can be seen, such as Michelangelo\'s statue of David and the Duomo, designed by architect Brunelleschi, as well as the canal city of Venice and the fashion capital of Milan.',
@@ -336,6 +347,7 @@ const countriesEn = [
     {
         id: idUSA,
         photoUrl: 'https://www.timeturk.com/resim/detay/75/756540.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=yWWIq54qFOY',
         country: 'USA',
         capital: 'Washington',
         info: 'The United States of America is a state of 50 states that occupies a significant part of North America. The state of Alaska is located in the northwest of the continent, while Hawaii is in the Pacific Ocean. The major cities of the Atlantic coast include New York and the capital Washington. To the west of them lies another important city - Chicago, known for its impressive architecture. And on the west coast is Los Angeles with famous Hollywood film studios.',
@@ -365,6 +377,7 @@ const countriesEn = [
     {
         id: idSpain,
         photoUrl: 'https://s1.1zoom.ru/prev/514/Spain_Houses_Seville_Spanish_Square_Maria_Luisa_513276_600x400.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=pMrXf02udxk',
         country: 'Spain',
         capital: 'Madrid',
         info: 'Spain is a European country located on the Iberian Peninsula. The territory of Spain is divided into 17 autonomous regions. The capital of the country, Madrid, houses the Royal Palace and the Prado Museum, which houses works of European masters. In Segovia, you can visit the medieval castle (Alcazar) and see the well-preserved Roman aqueduct. Barcelona is the capital of the autonomous community of Catalonia. The appearance of this city is determined by the numerous fanciful creations of the architect Antoni Gaudí, including the Sagrada Familia.',
@@ -394,6 +407,7 @@ const countriesEn = [
     {
         id: idFrance,
         photoUrl: 'https://img.rl0.ru/78a583f63053e1878722bcacf5476d2b/e600x400o-x0i/https/news.rambler.ru/img/2017/03/06202728.361626.2439.jpeg',
+        videoUrl: 'https://www.youtube.com/watch?v=a9Gu4fExojA',
         country: 'France',
         capital: 'Paris',
         info: 'France is a country in Western Europe, home to medieval towns, alpine villages and Mediterranean beaches. Paris, the capital of the state, is famous for its fashion houses, the oldest art museums, including the Louvre, and landmarks such as the Eiffel Tower. France is known for its wines and fine cuisine. The rock paintings in the Lascaux cave, the Amphitheater of the Three Gauls in Lyon and the huge Palace of Versailles testify to the rich history of the area.',
@@ -423,6 +437,7 @@ const countriesEn = [
     {
         id: idChina,
         photoUrl: 'https://calendar.baby-club.ru/img/apr/k4.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=3xZk5oK35Uc',
         country: 'China',
         capital: 'Beijing',
         info: 'China is a densely populated country in East Asia with varied landscapes and topography. Here you can find meadows, deserts, mountains, lakes, rivers and coasts with a length of more than 14 thousand km. The capital of the country, Beijing, is famous for its modern architecture and ancient monuments, including the Forbidden City palace complex and Tiananmen Square. To the east is the world financial center Shanghai, whose silhouette is shaped by countless skyscrapers. The Great Wall of China crosses northern China, crossing it from east to west.',
@@ -452,6 +467,7 @@ const countriesEn = [
     {
         id: idIndia,
         photoUrl: 'https://cdn-nus-1.pinme.ru/tumb/600/photo/bc/60/bc6053f77d1efd80f56744cf7d669d66.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=uXmXm73JYck',
         country: 'India',
         capital: 'New Delhi',
         info: 'India is a huge country in South Asia with a varied relief: both the mountain peaks of the Himalayas and the coast of the Indian Ocean are located on its territory. The history of the country goes back five millennia. In northern India, architectural monuments of the Mughal era have been preserved, including the Red Fort and the Jami Masjid (Cathedral Mosque) in Delhi and the Taj Mahal in Agra. The city of Varanasi is known as a place of pilgrimage for Hindus who bathe in the Ganges, and Rishikesh is known as a yoga center and starting point for trekking in the Himalayas.',
@@ -484,6 +500,7 @@ const countriesFr = [
     {
         id: idRussia,
         photoUrl: 'https://s1.1zoom.ru/prev/431/430286.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=9RfuxVZdtjY',
         country: 'Russie',
         capital: 'Moscou',
         info: 'La Russie est le plus grand pays du monde, situé en Europe de l\'Est et en Asie du Nord et baigné par les océans Pacifique et Arctique. Le paysage de la Russie est extrêmement diversifié: sur son territoire, il y a de la toundra, des forêts et des plages subtropicales. Des compagnies de ballet de renommée mondiale se produisent au théâtre Bolchoï à Moscou et au théâtre Mariinsky à Saint-Pétersbourg. Fondée par l\'empereur Pierre Ier, Saint-Pétersbourg est célèbre pour son palais d\'hiver baroque, qui abrite une partie de la vaste collection d\'art du musée de l\'Ermitage.',
@@ -513,6 +530,7 @@ const countriesFr = [
     {
         id: idEngland,
         photoUrl: 'https://static9.depositphotos.com/1611230/1080/i/450/depositphotos_10800421-stock-photo-big-ben-with-red-double.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=0FtFHGtBPe8',
         country: 'Grande Bretagne',
         capital: 'Londres',
         info: 'La Grande-Bretagne (officiellement le Royaume-Uni de Grande-Bretagne et d\'Irlande du Nord) est un État insulaire du nord-ouest de l\'Europe, composé de l\'Angleterre, de l\'Écosse, du Pays de Galles et de l\'Irlande du Nord. En Angleterre, la patrie de Shakespeare et des Beatles, est la capitale de l\'État, Londres - le centre mondial des affaires et de la culture. Le pays est également connu pour son Stonehenge néolithique, ses thermes romains à Bath et les anciennes universités d\'Oxford et de Cambridge.',
@@ -542,6 +560,7 @@ const countriesFr = [
     {
         id: idItaly,
         photoUrl: 'https://static3.depositphotos.com/1000135/100/i/450/depositphotos_1007618-stock-photo-empty.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=hMpDo_Th-qA',
         country: 'Italie',
         capital: 'Rome',
         info: 'L\'Italie est un État méditerranéen du sud de l\'Europe avec un long littoral qui a eu un impact énorme sur la culture et la cuisine occidentales. La capitale du pays, Rome, abrite l\'État du Vatican, ainsi que des musées de renommée mondiale et des ruines antiques. Les autres grandes villes d\'Italie sont Florence, où l\'on peut voir des chefs-d\'œuvre de la Renaissance, tels que la statue de Michel-Ange de David et le Duomo, conçu par l\'architecte Brunelleschi, ainsi que la ville du canal de Venise et la capitale de la mode de Milan.',
@@ -571,6 +590,7 @@ const countriesFr = [
     {
         id: idUSA,
         photoUrl: 'https://www.timeturk.com/resim/detay/75/756540.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=yWWIq54qFOY',
         country: 'Etats-Unis',
         capital: 'Washington',
         info: 'Les États-Unis d\'Amérique sont un État de 50 États qui occupe une partie importante de l\'Amérique du Nord. L\'état de l\'Alaska est situé au nord-ouest du continent, tandis qu\'Hawaï se trouve dans l\'océan Pacifique. Les grandes villes de la côte atlantique comprennent New York et la capitale Washington. À l\'ouest d\'eux se trouve une autre ville importante - Chicago, connue pour son architecture impressionnante. Et sur la côte ouest se trouve Los Angeles avec les célèbres studios de cinéma hollywoodiens.',
@@ -600,6 +620,7 @@ const countriesFr = [
     {
         id: idSpain,
         photoUrl: 'https://s1.1zoom.ru/prev/514/Spain_Houses_Seville_Spanish_Square_Maria_Luisa_513276_600x400.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=pMrXf02udxk',
         country: 'Espagne',
         capital: 'Madrid',
         info: 'L\'Espagne est un pays européen situé sur la péninsule ibérique. Le territoire espagnol est divisé en 17 régions autonomes. La capitale du pays, Madrid, abrite le Palais Royal et le Musée du Prado, qui abrite des œuvres de maîtres européens. À Ségovie, vous pouvez visiter le château médiéval (Alcazar) et voir l\'aqueduc romain bien conservé. Barcelone est la capitale de la communauté autonome de Catalogne. L\'apparence de cette ville est déterminée par les nombreuses créations fantaisistes de l\'architecte Antoni Gaudí, y compris la Sagrada Familia.',
@@ -629,6 +650,7 @@ const countriesFr = [
     {
         id: idFrance,
         photoUrl: 'https://img.rl0.ru/78a583f63053e1878722bcacf5476d2b/e600x400o-x0i/https/news.rambler.ru/img/2017/03/06202728.361626.2439.jpeg',
+        videoUrl: 'https://www.youtube.com/watch?v=a9Gu4fExojA',
         country: 'France',
         capital: 'Paris',
         info: 'La France est un pays d\'Europe occidentale, qui abrite des villes médiévales, des villages alpins et des plages méditerranéennes. Paris, la capitale de l\'État, est célèbre pour ses maisons de couture, les plus anciens musées d\'art, dont le Louvre, et des monuments tels que la Tour Eiffel. La France est connue pour ses vins et sa cuisine raffinée. Les peintures rupestres de la grotte de Lascaux, l\'amphithéâtre des Trois Gaules à Lyon et l\'immense château de Versailles témoignent de la riche histoire de la région.',
@@ -658,6 +680,7 @@ const countriesFr = [
     {
         id: idChina,
         photoUrl: 'https://calendar.baby-club.ru/img/apr/k4.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=3xZk5oK35Uc',
         country: 'Chine',
         capital: 'Pékin',
         info: 'La Chine est un pays densément peuplé d\'Asie de l\'Est avec des paysages et une topographie variés. Ici vous pouvez trouver des prairies, des déserts, des montagnes, des lacs, des rivières et des côtes d\'une longueur de plus de 14 mille km. La capitale du pays, Pékin, est célèbre pour son architecture moderne et ses monuments anciens, dont le complexe du palais de la Cité Interdite et la place Tiananmen. À l\'est se trouve le centre financier mondial de Shanghai, dont la silhouette est façonnée par d\'innombrables gratte-ciel. La Grande Muraille de Chine traverse le nord de la Chine, la traversant d\'est en ouest.',
@@ -687,6 +710,7 @@ const countriesFr = [
     {
         id: idIndia,
         photoUrl: 'https://cdn-nus-1.pinme.ru/tumb/600/photo/bc/60/bc6053f77d1efd80f56744cf7d669d66.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=uXmXm73JYck',
         country: 'Inde',
         capital: 'New Delhi',
         info: 'L\'Inde est un immense pays d\'Asie du Sud au relief varié: à la fois les sommets montagneux de l\'Himalaya et la côte de l\'océan Indien sont situés sur son territoire. L\'histoire du pays remonte à cinq millénaires. Dans le nord de l\'Inde, il existe des monuments architecturaux de l\'époque moghole, notamment le Fort Rouge et le Jami Masjid (mosquée cathédrale) à Delhi et le Taj Mahal à Agra. La ville de Varanasi est connue comme un lieu de pèlerinage pour les hindous qui se baignent dans le Gange, et Rishikesh est connue comme un centre de yoga et un point de départ pour le trekking dans l\'Himalaya.',
