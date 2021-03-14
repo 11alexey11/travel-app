@@ -1,4 +1,9 @@
 const ActionCreator = {
+  changeLanguage: (language) => ({
+    type: `CHANGE_LANGUAGE`,
+    payload: language,
+  }),
+  
   findCountry: (query) => ({
     type: `FIND_COUNTRY`,
     payload: query,

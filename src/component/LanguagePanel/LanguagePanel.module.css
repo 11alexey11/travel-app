@@ -1,0 +1,17 @@
+.headerLang {
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.option {
+  background-color: #00695c;
+}
