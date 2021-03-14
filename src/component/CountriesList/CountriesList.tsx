@@ -25,7 +25,7 @@ const CountriesList: React.FC<CountriesProps> = ({ countries, history }) => {
 
   return (
     <div className={styles.countriesList}>
-      <div className={styles.cardsTitleWrapper}>
+      <div id="cardsTitleWrapper" className={styles.cardsTitleWrapper}>
         <h1 className={styles.cardsTitle}>Лучшие направления</h1>
         <p className={styles.cardsDescription}>Наиболее популярные страны в {monthNames[date.getMonth()]}</p>
       </div>
