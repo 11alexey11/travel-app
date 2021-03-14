@@ -1,11 +1,24 @@
-.searchPanel {
-  width: 400px;
+.searchWrapper {
+  position: relative;
+  width: 360px;
   height: 50px;
-  padding: 0 20px;
-  background-color: transparent;
-  color: #fff;
-  font-size: 1rem;  
-  border: 2px solid #fff;
-  border-radius: 30px;
-  outline: none;
+}
+
+.searchImg {
+  position: absolute;
+  top: 50%;
+  right: -65px;
+  transform: translateY(-50%);
+  width: 35px;
+  cursor: pointer;
+}
+
+.removeImg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 15px;
+  cursor: pointer;
 }
