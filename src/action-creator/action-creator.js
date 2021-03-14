@@ -1,3 +1,5 @@
+import getData from "../service";
+
 const ActionCreator = {
   changeLanguage: (language) => ({
     type: `CHANGE_LANGUAGE`,
@@ -9,8 +11,8 @@ const ActionCreator = {
     payload: query,
   }),
 
-  getData: (getData) => (dispatch) => {
-    getData().then((data) => {
+  getData: (lang) => (dispatch) => {
+    getData(lang).then((data) => {
       dispatch({
         type: `GET_DATA`,
         payload: data,
