@@ -6,7 +6,6 @@ import reducer from './reducer/reducer';
 import thunk from 'redux-thunk';
 
 import ActionCreator from './action-creator/action-creator';
-import getData from "./service";
 import AppContainer from "./component/App/AppContainer";
 
 const store = createStore(
@@ -17,7 +16,7 @@ const store = createStore(
   )
 );
 
-store.dispatch(ActionCreator.getData(getData));
+store.dispatch(ActionCreator.getData("ru"));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -7,12 +7,17 @@ import ActionCreator from '../../action-creator/action-creator';
 import { AppState } from '../../interfaces';
 
 interface LanguagePanelProps {
-  changeLanguage: (language: string) => void
+  onLanguageChange: (language: string) => void
 }
 
-const LanguagePanel: React.FC<LanguagePanelProps> = ({ changeLanguage }) => {
+
+const LanguagePanel: React.FC<LanguagePanelProps> = ({ onLanguageChange }) => {
+  const onSelectChange = (evt: React.ChangeEvent<HTMLSelectElement>): void => {
+    onLanguageChange(evt.currentTarget.value)
+  }
+
   return (
-    <select className={styles.headerLang} name="language" onChange={(evt) => changeLanguage(evt.currentTarget.value)}>
+    <select className={styles.headerLang} name="language" onChange={onSelectChange}>
       <option className={styles.option} value="ru">ru</option>
       <option className={styles.option} value="en">en</option>
       <option className={styles.option} value="fr">fr</option>
@@ -26,8 +31,9 @@ const mapStateToProps = (state: AppState) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  changeLanguage: (language: string) => {
+  onLanguageChange: (language: string) => {
     dispatch(ActionCreator.changeLanguage(language));
+    dispatch(ActionCreator.getData(language));
   },
 });
 
