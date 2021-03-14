@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+# /src/apiKey.ts нужно посмотреть будет ли pull
 
 # testing
 /coverage

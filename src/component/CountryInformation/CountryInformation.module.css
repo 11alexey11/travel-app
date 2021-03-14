@@ -50,9 +50,33 @@
 
 .widgetsContainer {
     display: flex;
+    justify-content: space-between;
+    font-size: 25px;
 }
 
 .weatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeContainer {
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    padding-right: 10px;
+}
+
+.watch {
+    padding-left: 10px;
+    width: 155px;
+}
+
+.currencyContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
