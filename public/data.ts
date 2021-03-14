@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
 const idRussia = uuid();
+console.log(idRussia)
 const idEngland = uuid();
 const idItaly = uuid();
 const idUSA = uuid();
