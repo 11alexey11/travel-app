@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  *:focus {
+    outline: 1px solid #fff;
+  }
 `;
 
 export default GlobalStyle;

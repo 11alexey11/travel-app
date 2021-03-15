@@ -9,12 +9,13 @@ import Header from '../Header/Header';
 import Loader from '../Loader/Loader.jsx';
 
 interface AppProps {
+  data: Array<Object>,
   countries: Array<Object>,
   language: string
 }
 
-const App: React.FC<AppProps> = ({ countries, language }) => {
-  if (countries.length === 0 || language === null) {
+const App: React.FC<AppProps> = ({ data, countries, language }) => {
+  if (data.length === 0 || language === null) {
     return <Loader />
   }
 

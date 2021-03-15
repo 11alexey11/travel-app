@@ -29,6 +29,10 @@
   fill: #fff;
 }
 
+.headerIcon:hover {
+  outline: 1px solid black;
+}
+
 .headerTextWrapper {
   position: absolute;
   top: 30%;

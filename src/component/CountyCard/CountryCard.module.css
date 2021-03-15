@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+.countryCard:focus {
+  outline: 3px solid #00695c;
+}
+
 .countryCard:nth-child(4) {
   width: 490px;
 }
