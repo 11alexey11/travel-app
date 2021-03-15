@@ -12,6 +12,10 @@ const StyledSearchPanel = styled.input`
     border: 2px solid #fff;
     border-radius: 30px;
     outline: none;
+
+    &::placeholder {
+      color: #fff;
+    }
   }
 `
 

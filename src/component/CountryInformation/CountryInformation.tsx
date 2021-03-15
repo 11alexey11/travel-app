@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { connect } from 'react-redux';
 import 'swiper/swiper-bundle.min.css';
 import styles from './CountryInformation.module.css';
 import './swiper.css'
@@ -8,11 +9,15 @@ import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
 import { keyWeather, keyСurrency } from '../../apiKey';
 
+import { AppState } from '../../interfaces';
+import languages from "../../utils/languages";
+
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 interface CountryInformationProps {
-  country: any
+  country: any,
+  language: string
 }
 
 const getTime = (timezone: number) => {
@@ -23,7 +28,7 @@ const getTime = (timezone: number) => {
   return [d.toLocaleDateString(), d.getHours(), d.getMinutes(), d.getSeconds()];
 }
 
-const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
+const CountryInformation: React.FC<CountryInformationProps> = ({ country, language }) => {
   const mapRef: any = useRef(null);
   const [weather, setWeather]: any = useState([]);
   const [currency, setCurrency]: any = useState(0);
@@ -88,7 +93,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
             <img className={styles.photo} src={country.photoUrl} alt={country.country} />
             <div className={styles.infoContainer}>
               <p>{country.country}</p>
-              <p>{`Столица: ${country.capital}`}</p>
+              <p>{languages.capital[language]}: {country.capital}</p>
             </div>
           </div>
           <div className={styles.countryContainer}>
@@ -173,4 +178,10 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country }) => {
   );
 }
 
-export default CountryInformation;
+const mapStateToProps = (state: AppState) => {
+  return {
+    language: state.language
+  };
+};
+
+export default connect(mapStateToProps)(CountryInformation);
