@@ -16,9 +16,9 @@ const store = createStore(
   )
 );
 
-const lang = localStorage.travelAppLang ? localStorage.travelAppLang : "ru";
+const lang = localStorage.travelAppLang ? JSON.parse(localStorage.travelAppLang) : "ru";
 
-store.dispatch(ActionCreator.getData(JSON.parse(lang)));
+store.dispatch(ActionCreator.getData(lang));
 
 ReactDOM.render(
   <Provider store={store}>

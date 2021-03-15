@@ -15,7 +15,7 @@ interface AppProps {
 
 const App: React.FC<AppProps> = ({ countries, language }) => {
   if (countries.length === 0 || language === null) {
-    return Loader as any;
+    return <Loader />
   }
 
   return (
