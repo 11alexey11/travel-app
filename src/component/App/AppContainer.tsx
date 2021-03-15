@@ -4,16 +4,16 @@ import { AppState } from '../../interfaces';
 import App from './App';
 
 interface AppContainerProps {
-    countries: Array<Object>
+    countries: Array<Object>;
 }
 
-const AppContainer: React.FC<AppContainerProps> = ({ countries }) => {
+const AppContainer: React.FC<AppContainerProps> = ({ countries}) => {
     return <App countries={countries} />;
 }
 
 const mapStateToProps = (state: AppState) => {
     return {
-      countries: state.countries
+      countries: state.countries,
     };
 };
 

@@ -6,9 +6,10 @@ import Header from '../Header/Header';
 import СountriesList from '../CountriesList/CountriesList';
 import GlobalStyle from './GlobalStyle';
 import CountryInformation from '../CountryInformation/CountryInformation';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 interface AppProps {
-  countries: Array<Object>
+  countries: Array<Object>;
 }
 
 const App: React.FC<AppProps> = ({countries}) => {
@@ -23,6 +24,8 @@ const App: React.FC<AppProps> = ({countries}) => {
         {
           countries.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i}`} render={ () => <CountryInformation country={item} />} />))
         }
+
+        <Route exact path="/auth" component={RegistrationForm} />
 
         <Footer />
       </Router>

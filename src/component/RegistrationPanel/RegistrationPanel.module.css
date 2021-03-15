@@ -1,0 +1,16 @@
+.registrationContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 265px;
+}
+
+.registrationElement {
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
