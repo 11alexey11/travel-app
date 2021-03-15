@@ -8,6 +8,8 @@ import SearchPannel from '../SearchPanel/SearchPanel';
 import StyledHeader from './StyledHeader';
 import StyledHeaderCutter from './StyledHeaderCutter';
 import styles from './Header.module.css';
+import RegistrationPanel from '../RegistrationPanel/RegistrationPanel';
+import UserPanel from '../UserPanel/UserPanel';
 
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
@@ -28,6 +30,8 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
         </Link>
         <SearchPannel />
         <LanguagePannel />
+        <UserPanel />
+        <RegistrationPanel />
       </div>
       <div className={styles.headerTextWrapper}>-
         <p className={styles.headerTitle}>Travel App</p>

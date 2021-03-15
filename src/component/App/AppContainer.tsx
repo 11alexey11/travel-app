@@ -4,9 +4,9 @@ import { AppState } from '../../interfaces';
 import App from './App';
 
 interface AppContainerProps {
-  data: Array<Object>,
-  countries: Array<Object>,
-  language: string
+    countries: Array<Object>;
+    data: Array<Object>,
+    language: string
 }
 
 const AppContainer: React.FC<AppContainerProps> = ({ data, countries, language }) => {

@@ -1,6 +1,10 @@
 const initialState = {
   data: [],
   countries: [],
+  isLogin: false,
+  isSignIn: false,
+  user: {},
+  userName: '',
   language: null,
 };
 
@@ -16,6 +20,20 @@ const reducer = (state = initialState, action) => {
         ...state,
         data: action.payload,
       };
+    case `GET_LOGIN`: {
+      const { user }  = action.payload
+      return {
+        ...state,
+        user,
+      }
+    }
+    case `SEND_REGISTRATION`: {
+      const { user } = action.payload
+      return {
+        ...state,
+        user,
+      }
+    }
     case `SET_COUNTRIES`:
       return {
         ...state,
@@ -34,6 +52,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         countries: filtredCoutries,
       };
+    case `CHANGE_IS_LOGIN`:
+      return {
+        ...state,
+        isLogin: action.payload
+      }
+    case `CHANGE_IS_SIGN_IN`:
+      return {
+        ...state,
+        isSignIn: action.payload
+      }
+    case `SET_USER_NAME`:
+      return {
+        ...state,
+        userName: action.payload
+      }
     default:
       return state;
   }

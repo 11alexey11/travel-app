@@ -5,6 +5,7 @@ import CountryInformation from '../CountryInformation/CountryInformation';
 import СountriesList from '../CountriesList/CountriesList';
 import Footer from '../Footer/Footer';
 import GlobalStyle from './GlobalStyle';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader.jsx';
 
@@ -30,6 +31,8 @@ const App: React.FC<AppProps> = ({ data, countries, language }) => {
         {
           countries.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i}`} render={() => <CountryInformation country={item} />} />))
         }
+
+        <Route exact path="/auth" component={RegistrationForm} />
 
         <Footer />
       </Router>
