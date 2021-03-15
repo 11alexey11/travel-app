@@ -1,11 +1,15 @@
 import { getData, getLogin, sendRegistration } from "../service";
 
 const ActionCreator = {
-  changeLanguage: (language) => ({
-    type: `CHANGE_LANGUAGE`,
-    payload: language,
-  }),
-  
+  changeLanguage: (language) => {
+    localStorage.travelAppLang = JSON.stringify(language);
+
+    return {
+      type: `CHANGE_LANGUAGE`,
+      payload: language,
+    };
+  },
+
   findCountry: (query) => ({
     type: `FIND_COUNTRY`,
     payload: query,
@@ -21,6 +25,11 @@ const ActionCreator = {
       dispatch({
         type: `SET_COUNTRIES`,
         payload: data,
+      });
+
+      dispatch({
+        type: `CHANGE_LANGUAGE`,
+        payload: lang,
       });
     });
   },

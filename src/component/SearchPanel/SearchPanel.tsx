@@ -7,15 +7,16 @@ import StyledSearchPanel from './StyledSearchPanel';
 import ActionCreator from '../../action-creator/action-creator';
 import { AppState } from '../../interfaces';
 
+import languages from "../../utils/languages";
+
 interface SearchPanelProps {
-  findCountry: (query: string) => void
+  findCountry: (query: string) => void,
+  language: string
 }
 
-const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry }) => {
+const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language }) => {
   const [query, setQuery] = useState<string>("");
   const removeImg = useRef<HTMLImageElement>(null);
-
-  const searchText: string = `Type here to search`
 
   const onSearchChange = (evt: React.FormEvent<HTMLInputElement>): void => {
     if (evt.currentTarget.value.length !== 0 && removeImg.current && removeImg.current.style.display !== "block") {
@@ -50,7 +51,7 @@ const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry }) => {
   return (
     <div className={styles.searchWrapper}>
       <StyledSearchPanel
-        placeholder={searchText}
+        placeholder={languages.searchPlaceholder[language]}
         value={query}
         autoFocus={true}
         onChange={onSearchChange}
@@ -64,7 +65,8 @@ const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry }) => {
 
 const mapStateToProps = (state: AppState) => {
   return {
-    countries: state.countries
+    countries: state.countries,
+    language: state.language
   };
 };
 

@@ -1,6 +1,8 @@
 export interface AppState {
+  data: Array<Object>;
   countries: Array<Object>;
   isLogin: boolean;
+  language: string
 }
 
 export interface LoginState {
@@ -16,4 +18,5 @@ export interface AuthState {
 
 export interface UserState {
   userName: string;
+  language: string;
 }
