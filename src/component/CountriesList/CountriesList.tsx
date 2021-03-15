@@ -15,9 +15,9 @@ interface CountriesProps {
 }
 
 const CountriesList: React.FC<CountriesProps> = ({ countries, history, language }) => {
-
   const getMonth = () => {
     let monthes: string[] = [];
+    const date: Date = new Date();
     const monthNamesRu: string[] = ["Январе", "Феврале", "Марте", "Апреле", "Мае", "Июне",
       "Июле", "Августе", "Сентябре", "Октябре", "Ноябре", "Декабре"];
     const monthNamesEn: string[] = ["January", "February", "March", "April", "May", "June",
@@ -37,16 +37,7 @@ const CountriesList: React.FC<CountriesProps> = ({ countries, history, language 
       monthes = monthNamesFr;
     }
 
-    const date: Date = new Date();
-
     return monthes[date.getMonth()]
-  }
-
-
-  // add loader
-
-  if (countries === null) {
-    return <div>Loading...</div>;
   }
 
   return (
@@ -61,9 +52,9 @@ const CountriesList: React.FC<CountriesProps> = ({ countries, history, language 
             <CountryCard
               capital={country.capital}
               imgUrl={country.photoUrl}
+              index={i}
               key={country.id}
               name={country.country}
-              onCountyCardClick={() => history.push(`/${i}`)}
             />
           )
         })}

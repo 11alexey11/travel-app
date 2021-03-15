@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import styles from './CountryCard.module.css';
@@ -8,23 +9,23 @@ import languages from "../../utils/languages";
 
 interface CountryProps {
   capital: string;
-  imgUrl: string,
-  key: string,
-  language: string
-  name: string,
-  onCountyCardClick: () => void
+  index: number;
+  imgUrl: string;
+  key: string;
+  language: string;
+  name: string;
 }
 
-const CountryCard: React.FC<CountryProps> = ({ capital, imgUrl, language, name, onCountyCardClick }) => {
+const CountryCard: React.FC<CountryProps> = ({ capital, index, imgUrl, language, name }) => {
   return (
-    <div className={styles.countryCard} onClick={onCountyCardClick}>
+    <Link to={index.toString()} className={styles.countryCard} tabIndex={0}>
       <div className={styles.cardMask}></div>
       <img className={styles.cardImg} src={imgUrl} alt={"Photo of " + name} width="100%" />
       <div className={styles.cardInfoWrapper}>
         <p className={styles.cardTitle}>{name}</p>
         <p className={styles.cardCapital}>{languages.capital[language]}: {capital}</p>
       </div>
-    </div>
+    </Link>
   )
 }
 
