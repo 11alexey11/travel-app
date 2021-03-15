@@ -1,16 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import StyledFooter from './StyledFooter';
 import StyledFooterCutter from './StyledFooterCutter';
 import styles from './Footer.module.css';
 
-const Footer: React.FC = () => {
+import { AppState } from '../../interfaces';
+import languages from "../../utils/languages";
+
+interface FooterProps {
+  language: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ language }) => {
   return (
     <StyledFooter>
       <div className={styles.footerMask}></div>
       <StyledFooterCutter />
       <div className={styles.authorsWrapper}>
-        <h2 className={styles.authorsTitle}>Авторы:</h2>
+        <h2 className={styles.authorsTitle}>{languages.authors[language]}:</h2>
         <ul className={styles.authors}>
           <li>
             <a className={styles.author} href="https://github.com/11alexey11">11alexey11</a>
@@ -36,4 +44,10 @@ const Footer: React.FC = () => {
   )
 }
 
-export default Footer;
+const mapStateToProps = (state: AppState) => {
+  return {
+    language: state.language
+  };
+};
+
+export default connect(mapStateToProps)(Footer);

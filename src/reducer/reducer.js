@@ -1,7 +1,7 @@
 const initialState = {
   data: [],
   countries: [],
-  language: "ru"
+  language: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,11 +22,15 @@ const reducer = (state = initialState, action) => {
         countries: action.payload,
       };
     case `FIND_COUNTRY`:
-      const filtredCoutries = state.data.filter((country) =>
-        country.capital.toLowerCase().includes(action.payload.toLowerCase()) ||
-        country.country.toLowerCase().includes(action.payload.toLowerCase()));
+      const filtredCoutries = state.data.filter(
+        (country) =>
+          country.capital
+            .toLowerCase()
+            .includes(action.payload.toLowerCase()) ||
+          country.country.toLowerCase().includes(action.payload.toLowerCase())
+      );
 
-        return {
+      return {
         ...state,
         countries: filtredCoutries,
       };

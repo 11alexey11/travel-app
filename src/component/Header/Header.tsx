@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import LanguagePannel from '../LanguagePanel/LanguagePanel';
 import SearchPannel from '../SearchPanel/SearchPanel';
@@ -8,7 +9,14 @@ import StyledHeader from './StyledHeader';
 import StyledHeaderCutter from './StyledHeaderCutter';
 import styles from './Header.module.css';
 
-const Header: React.FC = () => {
+import { AppState } from '../../interfaces';
+import languages from "../../utils/languages";
+
+interface HeaderProps {
+  language: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ language }) => {
   return (
     <StyledHeader className={styles.header}>
       <div className={styles.headerTopMask}></div>
@@ -21,13 +29,19 @@ const Header: React.FC = () => {
         <SearchPannel />
         <LanguagePannel />
       </div>
-      <div className={styles.headerTextWrapper}>
+      <div className={styles.headerTextWrapper}>-
         <p className={styles.headerTitle}>Travel App</p>
-        <p className={styles.headerSlogan}>Открой. Исследуй. Восхищайся.</p>
+        <p className={styles.headerSlogan}>{languages.headerSlogan[language]}</p>
       </div>
       <StyledHeaderCutter />
     </StyledHeader>
   )
 }
 
-export default Header;
+const mapStateToProps = (state: AppState) => {
+  return {
+    language: state.language
+  };
+};
+
+export default connect(mapStateToProps)(Header);
