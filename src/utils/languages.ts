@@ -70,6 +70,12 @@ const languages: Lang = {
     en: "Local time",
     fr: "Heure locale",
   },
+
+  rating: {
+    ru: "Оцените достопримечательности",
+    en: "Rate the sights",
+    fr: "Évaluez les curiosités",
+  },
 };
 
 export default languages;

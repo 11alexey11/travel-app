@@ -17,7 +17,8 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
 
 interface CountryInformationProps {
   country: any,
-  language: string
+  language: string,
+  user: any
 }
 
 const getTime = (timezone: number) => {
@@ -28,7 +29,7 @@ const getTime = (timezone: number) => {
   return [d.toLocaleDateString(), d.getHours(), d.getMinutes(), d.getSeconds()];
 }
 
-const CountryInformation: React.FC<CountryInformationProps> = ({ country, language }) => {
+const CountryInformation: React.FC<CountryInformationProps> = ({ country, language, user }) => {
   const mapRef: any = useRef(null);
   const swiperRef = useRef<HTMLDivElement>(null);
   const [weather, setWeather]: any = useState([]);
@@ -165,6 +166,33 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
                 thumbs
               }
             </Swiper>
+
+            <div className={styles.rating}>
+              <h3>{languages.rating[language]}</h3>
+              <div>{user.name}</div>
+                <div>
+                  <input name="rating" value="5" type="radio" />
+                  <label htmlFor="5-stars" title="perfect">
+                  </label>
+
+                  <input name="rating" value="4" type="radio" />
+                  <label htmlFor="4-stars" title="good">
+                  </label>
+
+                  <input name="rating" value="3" type="radio" />
+                  <label htmlFor="3-stars" title="not bad">
+                  </label>
+
+                  <input name="rating" value="2" type="radio" />
+                  <label htmlFor="2-stars" title="badly">
+                  </label>
+
+                  <input name="rating" value="1" type="radio" />
+                  <label htmlFor="1-star" title="terribly">
+                  </label>
+                </div>
+                
+            </div>
           </div>
         </div>
         <div>
@@ -233,7 +261,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
 
 const mapStateToProps = (state: AppState) => {
   return {
-    language: state.language
+    language: state.language,
+    user: state.user
   };
 };
 
