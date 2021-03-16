@@ -26,3 +26,9 @@
   margin: 0 auto;
   margin-top: 40px;
 }
+
+@media screen and (max-width: 800px) {
+  .cardsWrapper {
+    width: 600px;
+  }
+}
