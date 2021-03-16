@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import styles from './SearchPanel.module.css';
@@ -11,10 +12,11 @@ import languages from "../../utils/languages";
 
 interface SearchPanelProps {
   findCountry: (query: string) => void,
-  language: string
+  language: string,
+  history: any
 }
 
-const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language }) => {
+const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language, history }) => {
   const [query, setQuery] = useState<string>("");
   const removeImg = useRef<HTMLImageElement>(null);
 
@@ -48,6 +50,10 @@ const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language }) => {
     }
   }
 
+  if (history.location.pathname !== "/") {
+    return null;
+  }
+
   return (
     <div className={styles.searchWrapper}>
       <StyledSearchPanel
@@ -76,4 +82,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPanel);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchPanel));
