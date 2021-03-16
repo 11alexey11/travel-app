@@ -48,7 +48,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
   const [thumbsSwiper, setThumbsSwiper]: any = useState(null);
 
   useEffect(() => {
-    const weatherURL = `http://api.openweathermap.org/data/2.5/weather?id=${country.capitalIdWeather}&appid=${keyWeather}&units=metric&lang=${country.lang}`;
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?id=${country.capitalIdWeather}&appid=${keyWeather}&units=metric&lang=${country.lang}`;
     const currencyURL = `https://openexchangerates.org/api/latest.json?app_id=${keyСurrency}`;
     fetch(weatherURL)
       .then(res => res.json())
@@ -217,7 +217,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
           <div className={styles.weatherContainer}>
             <h4 className={styles.countryCapital}>{country.capital}</h4>
             <div className={styles.weatherText}>{weather.weather ? weather.weather[0].description : null}</div>
-            <img src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
+            <img src={weather.weather ? `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
             <div>{weather.weather ? Math.round(weather.main.temp) : null}°C</div>
           </div>
           <div>
