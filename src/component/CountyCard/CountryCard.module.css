@@ -55,6 +55,13 @@
     .countryCard {
         width: 100%;
     }
+    .countryCard:nth-child(4) {
+        width: 100%;
+    }
+
+    .countryCard:nth-child(5) {
+        width: 100%;
+    }
 }
 
 
