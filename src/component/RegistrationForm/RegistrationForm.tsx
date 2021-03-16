@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 import ActionCreator from '../../action-creator/action-creator';
 import { AuthState } from '../../interfaces';
 import styles from './RegistrationForm.module.css';
+import languages from '../../utils/languages';
 
 interface RegistrationPanelProps {
     language: string;
     isSignIn: boolean;
     onLoginGet: (user: Object, isLogin: boolean) => void;
     onRegistrationSend: (user: Object, isLogin: boolean) => void;
+    onErrorSet: (error: string) => void;
     history: any;
+    errorType: string;
 }
 
 interface objForm {
@@ -19,10 +22,9 @@ interface objForm {
     file?: string;
 }
 
-const RegistrationForm: React.FC<RegistrationPanelProps> = ({ history, language, isSignIn, onLoginGet, onRegistrationSend }) => {
+const RegistrationForm: React.FC<RegistrationPanelProps> = ({ history, language, isSignIn, errorType, onLoginGet, onRegistrationSend, onErrorSet }) => {
     const [fileInformation, setFileInformation] = useState('');
-    const [error, setError] = useState('');
-    const [isError, setIsError] = useState(false);
+    const [errorDescription, setErrorDescription] = useState('');
 
     const getFile = useCallback((event: React.MouseEvent<HTMLLabelElement>): void => {
         const target = event.target as HTMLInputElement;
@@ -54,34 +56,26 @@ const RegistrationForm: React.FC<RegistrationPanelProps> = ({ history, language,
             }
         }
         if (flagError) {
-            setIsError(true);
-            if (language === 'ru') {
-                setError('Пустые поля');
-            } else if (language === 'en') {
-                setError('Empty fields');
-            } else {
-                setError('Champs vides');
-            }
+            onErrorSet('Empty');
         } else {
             if (isSignIn) {
                 onRegistrationSend(objFormData, true);
             } else {
                 onLoginGet(objFormData, true);
             }
-            setIsError(false);
-            history.push('/');
         }
-    }, [onLoginGet, onRegistrationSend, isSignIn, language, history]);
+    }, [onLoginGet, onRegistrationSend, onErrorSet, isSignIn]);
 
     useEffect(() => {
-        if (language === 'ru') {
-            setError('Пустые поля');
-        } else if (language === 'en') {
-            setError('Empty fields');
-        } else {
-            setError('Champs vides');
+        if (errorType === 'Not found') {
+            setErrorDescription(languages.errorSpanFound[language]);
+        } else if (errorType === 'Empty') {
+            setErrorDescription(languages.errorSpanEmpty[language]);
+        } else if (errorType === 'Success') {
+            onErrorSet('');
+            history.push('/');
         }
-    }, [language]);
+    }, [language, onErrorSet, history, errorType]);
 
     return (
         <div className={styles.formContainer}>
@@ -100,7 +94,7 @@ const RegistrationForm: React.FC<RegistrationPanelProps> = ({ history, language,
                         </>
                         : null
                 }
-                <span>{isError ? error : ''}</span>
+                <span>{errorDescription}</span>
                 <input className={styles.submitBtn} type="submit" value={language === 'ru' ? 'Отправить' : language === 'en' ? 'Send' : 'Envoyer'} />
             </form>
         </div>
@@ -111,6 +105,7 @@ const mapStateToProps = (state: AuthState) => ({
     language: state.language,
     isSignIn: state.isSignIn,
     user: state.user,
+    errorType: state.errorType,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -120,6 +115,9 @@ const mapDispatchToProps = (dispatch: any) => ({
     onRegistrationSend: (user: Object, isLogin: boolean) => {
         dispatch(ActionCreator.sendRegistration(user, isLogin));
     },
+    onErrorSet: (errorType: string) => {
+        dispatch(ActionCreator.setError(errorType));
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);

@@ -6,6 +6,7 @@ const initialState = {
   user: {},
   userName: '',
   language: null,
+  errorType: '',
 };
 
 const reducer = (state = initialState, action) => {
@@ -66,6 +67,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         userName: action.payload
+      }
+    case `SET_ERROR`:
+      return {
+        ...state,
+        errorType: action.payload
       }
     default:
       return state;

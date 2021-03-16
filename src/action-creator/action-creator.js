@@ -36,26 +36,39 @@ const ActionCreator = {
 
   getLogin: (user, isLogin) => (dispatch) => {
     getLogin(user)
-      .then((data) => {
-        localStorage.user = JSON.stringify({
-          email: data.user.email,
-          name: data.user.name,
-        });
+      .then((data) => {        
+        if (data.user) {
+          localStorage.user = JSON.stringify({
+            email: data.user.email,
+            name: data.user.name,
+          });
+  
+          dispatch({
+            type: `SET_USER_NAME`,
+            payload: data.user.name
+          })
+  
+          dispatch({
+            type: `GET_LOGIN`,
+            payload: data
+          });
+  
+          dispatch({
+            type: `CHANGE_IS_LOGIN`,
+            payload: isLogin
+          });
 
-        dispatch({
-          type: `SET_USER_NAME`,
-          payload: data.user.name
-        })
+          dispatch({
+            type: `SET_ERROR`,
+            payload: 'Success'
+          });
+        } else {
 
-        dispatch({
-          type: `GET_LOGIN`,
-          payload: data
-        });
-
-        dispatch({
-          type: `CHANGE_IS_LOGIN`,
-          payload: isLogin
-        })
+          dispatch({
+            type: `SET_ERROR`,
+            payload: 'Not found'
+          });
+        }
       })
   },
 
@@ -103,6 +116,11 @@ const ActionCreator = {
   setUserName: (userName) => ({
     type: `SET_USER_NAME`,
     payload: userName
+  }),
+
+  setError: (error) => ({
+    type: `SET_ERROR`,
+    payload: error
   }),
 };
 
