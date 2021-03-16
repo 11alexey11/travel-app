@@ -30,9 +30,11 @@ const Header: React.FC<HeaderProps> = ({ language, history }) => {
           </svg>
         </Link>
         <SearchPannel />
-        <LanguagePannel />
-        <UserPanel />
-        <RegistrationPanel />
+        <div className={styles.headerRightWrapper}>
+          <UserPanel />
+          <RegistrationPanel />
+          <LanguagePannel />
+        </div>
       </div>
       <div className={styles.headerTextWrapper}>-
         <p className={styles.headerTitle}>Travel App</p>
