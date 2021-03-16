@@ -186,8 +186,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             <img src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
             <div>{weather.weather ? Math.round(weather.main.temp) : null}°C</div>
           </div>
-          <div>
 
+          <div>
             <h4 className={styles.timeTittle}>{languages.timeTittle[language]}:</h4>
             <div className={styles.timeContainer}>
               <div className={styles.date}>{getTime(country.timezone)[0].toLocaleString('ca-IT')}</div>
@@ -200,6 +200,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             <div>{currency.toFixed(2)} $</div>
           </div>
         </div>
+
       </div>
     </main>
   );

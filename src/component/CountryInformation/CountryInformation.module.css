@@ -18,7 +18,6 @@
 .countryInfoContainer {
   display: flex;
   justify-content: center;
-  width: 70%;
   margin: 0 auto;
 }
 
@@ -107,7 +106,7 @@
   justify-content: space-between;
   position: absolute;
   top: 100px;
-  right: 70px;
+  right: 1%;
   width: 200px;
   height: 400px;
   z-index: 100;
@@ -144,8 +143,9 @@
 }
 
 .watch {
+  width: auto;
   padding-left: 10px;
-  width: 155px;
+  text-align: center;
 }
 
 .currencyContainer {

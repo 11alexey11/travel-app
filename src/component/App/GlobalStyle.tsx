@@ -26,11 +26,6 @@ const GlobalStyle = createGlobalStyle`
     padding-top: 20px;
     padding-bottom: 50px;
   }
-
-  .CountryInformation_watch__2_J_h {
-    width: auto;
-    text-align: center;
-  }
 `;
 
 export default GlobalStyle;
