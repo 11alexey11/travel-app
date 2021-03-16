@@ -30,6 +30,7 @@ const getTime = (timezone: number) => {
 
 const CountryInformation: React.FC<CountryInformationProps> = ({ country, language }) => {
   const mapRef: any = useRef(null);
+  const swiperRef = useRef<HTMLDivElement>(null);
   const [weather, setWeather]: any = useState([]);
   const [currency, setCurrency]: any = useState(0);
   const [hours, setHours]: any = useState(getTime(country.timezone)[1]);
@@ -107,27 +108,39 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.attractions[language]}</h2>
-          <Swiper
-            loop={true}
-            speed={500}
-            spaceBetween={50}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-          >
-            {
-              country.attractions.map((item: any, i: number) => {
-                return (
-                  <SwiperSlide key={i}>
-                    <img className={styles.photo} src={item.photoUrl} alt={item.name}></img>
-                    <h4>{item.name}</h4>
-                    <p >{item.info}</p>
-                  </SwiperSlide>
-                )
-              })
-            }
-          </Swiper>
+          <div className={styles.swiperWrapper} ref={swiperRef}>
+            <img 
+              className={styles.swiperFullScreen} 
+              src="./img/full_screen.svg" 
+              alt="full screen" 
+              width="30px" 
+              onClick={() => {
+                if (swiperRef.current !== null) {
+                  swiperRef.current.requestFullscreen();
+                }
+              }}/>
+            <Swiper
+              loop={true}
+              speed={500}
+              spaceBetween={50}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+            >
+              {
+                country.attractions.map((item: any, i: number) => {
+                  return (
+                    <SwiperSlide key={i}>
+                      <img className={styles.photo} src={item.photoUrl} alt={item.name}></img>
+                      <h4>{item.name}</h4>
+                      <p >{item.info}</p>
+                    </SwiperSlide>
+                  )
+                })
+              }
+            </Swiper>
+          </div>
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
