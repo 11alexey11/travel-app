@@ -138,15 +138,7 @@
   font-size: 20px;
   justify-content: center;
   align-items: center;
-}
-
-.date {
-  padding-right: 10px;
-}
-
-.watch {
-  padding-left: 10px;
-  width: 155px;
+  flex-direction: column;
 }
 
 .currencyContainer {
