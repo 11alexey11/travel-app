@@ -14,6 +14,7 @@ export interface AuthState {
   language: string;
   isSignIn: boolean;
   user: Object;
+  errorType: string;
 }
 
 export interface UserState {
