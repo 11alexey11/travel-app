@@ -36,12 +36,27 @@
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (min-width: 1200px) {
     .countryCard {
-        width: 800px;
+        width: 49%;
     }
 
+    .countryCard:nth-child(4) {
+        width: 49%;
+    }
+
+    .countryCard:nth-child(5) {
+        width: 49%;
+    }
 }
+
+
+@media screen and (max-width: 800px) {
+    .countryCard {
+        width: 100%;
+    }
+}
+
 
 .cardTitle {
     font-size: 1.3rem;
