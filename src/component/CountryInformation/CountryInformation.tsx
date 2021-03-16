@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import 'swiper/swiper-bundle.min.css';
 import styles from './CountryInformation.module.css';
 import './swiper.css'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
@@ -13,7 +13,7 @@ import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
 
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
 
 interface CountryInformationProps {
   country: any,
@@ -36,6 +36,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
   const [hours, setHours]: any = useState(getTime(country.timezone)[1]);
   const [minutes, setMinutes]: any = useState(getTime(country.timezone)[2]);
   const [seconds, setSeconds]: any = useState(getTime(country.timezone)[3]);
+  const [thumbsSwiper, setThumbsSwiper]: any = useState(null);
 
   useEffect(() => {
     const weatherURL = `http://api.openweathermap.org/data/2.5/weather?id=${country.capitalIdWeather}&appid=${keyWeather}&units=metric&lang=${country.lang}`;
@@ -86,6 +87,14 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
       });
   }, []);
 
+  const thumbs: Array<SwiperSlide> = country.attractions.map((item: any, i: number) => {
+    return (
+      <SwiperSlide tag="li" key={i}>
+        <img className={styles.photoThumb} src={item.photoUrl} alt={item.name} width={210} height={130}></img>
+      </SwiperSlide>
+    )
+  });
+
   return (
     <main className={styles.countryWrapper}>
       <div className={styles.content} >
@@ -109,20 +118,24 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.attractions[language]}</h2>
           <div className={styles.swiperWrapper} ref={swiperRef}>
-            <img 
-              className={styles.swiperFullScreen} 
-              src="./img/full_screen.svg" 
-              alt="full screen" 
-              width="30px" 
+            <img
+              className={styles.swiperFullScreen}
+              src="./img/full_screen.svg"
+              alt="full screen"
+              width="30px"
               onClick={() => {
                 if (swiperRef.current !== null) {
                   swiperRef.current.requestFullscreen();
                 }
-              }}/>
+              }} />
+
             <Swiper
+              tag="section"
+              thumbs={{ swiper: thumbsSwiper }}
+              wrapperTag="ul"
               loop={true}
               speed={500}
-              spaceBetween={50}
+              spaceBetween={0}
               slidesPerView={1}
               navigation
               pagination={{ clickable: true }}
@@ -131,13 +144,25 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
               {
                 country.attractions.map((item: any, i: number) => {
                   return (
-                    <SwiperSlide key={i}>
-                      <img className={styles.photo} src={item.photoUrl} alt={item.name}></img>
+                    <SwiperSlide tag="li" key={i}>
+                      <img className={styles.photo} src={item.photoUrl} alt={item.name} width={600} height={400}></img>
                       <h4>{item.name}</h4>
                       <p >{item.info}</p>
                     </SwiperSlide>
                   )
                 })
+              }
+            </Swiper>
+
+            <Swiper
+              id="thumbs"
+              onSwiper={setThumbsSwiper}
+              loop={true}
+              slidesPerView={4}
+              spaceBetween={5}
+            >
+              {
+                thumbs
               }
             </Swiper>
           </div>
