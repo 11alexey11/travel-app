@@ -159,8 +159,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
                 <Map
                   instanceRef={mapRef}
                   defaultState={{
-                    center: [3.731845, 8.755385],
-                    zoom: 1,
+                    center: country.capitalCoordinates,
+                    zoom: 3,
                     controls: ['zoomControl', 'fullscreenControl', 'geolocationControl', 'typeSelector'],
                   }}
                   width='100%'

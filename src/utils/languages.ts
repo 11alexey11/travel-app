@@ -41,6 +41,18 @@ const languages: Lang = {
     fr: "Tapez ici pour rechercher",
   },
 
+  errorSpanEmpty: {
+    ru: "Пустые поля",
+    en: "Empty fields",
+    fr: "Champs vides",
+  },
+
+  errorSpanFound: {
+    ru: "Пользователь не найден",
+    en: "User not found",
+    fr: "L'utilisateur est introuvable",
+  },
+
   attractions: {
     ru: "Достопримечательности",
     en: "Attractions",

@@ -86,18 +86,22 @@
 .videoMapContainer {
   display: flex;
   padding: 15px 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .videoContainer {
   width: 50%;
   padding-right: 10px;
   height: 360px;
+  padding-top: 10px;
 }
 
 .mapContainer {
   width: 50%;
   padding-left: 10px;
   height: 360px;
+  padding-top: 10px;
 }
 
 .widgetsContainer {

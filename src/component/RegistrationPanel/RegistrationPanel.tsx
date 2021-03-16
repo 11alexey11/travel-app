@@ -32,13 +32,23 @@ const RegistrationPanel: React.FC<RegistrationPanelProps> = ({ isLogin, language
                     </Link>
                 :
                     <>
-                        <Link onClick={ () => onSignInChange(false) } className={styles.registrationElement} to="/auth">
+                        <Link 
+                            onClick={ () => {
+                                window.scrollTo(0, document.documentElement.scrollHeight / 2);
+                                onSignInChange(false);
+                            }} 
+                            className={styles.registrationElement} to="/auth">
                             {
                                 language === 'ru' ? 'Войти' :
                                     language === 'en' ? 'Sign In' : 'S\'identifier'
                             }
                         </Link>
-                        <Link onClick={ () => onSignInChange(true) } className={styles.registrationElement} to="/auth">
+                        <Link 
+                            onClick={ () => {
+                                window.scrollTo(0, document.documentElement.scrollHeight / 2)
+                                onSignInChange(true);
+                            }} 
+                            className={styles.registrationElement} to="/auth">
                             {
                                 language === 'ru' ? 'Зарегистрироваться' :
                                     language === 'en' ? 'Sign Up' : 'S\'inscrire'
