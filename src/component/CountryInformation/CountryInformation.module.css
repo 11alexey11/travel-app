@@ -1,83 +1,139 @@
 .countryWrapper {
-    width: 100%;
+  width: 100%;
+  background-color: #eceff1;
 }
 
 .content {
-    padding: 20px 15%;
-    font-size: 20px;
+  position: relative;
+  padding: 20px 15%;
+  padding-bottom: 70px;
+  font-size: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.4rem;
 }
 
 .countryInfoContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.cardMask {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(40, 40, 40, 0.4991130241158963) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.5;
+  z-index: 0;
 }
 
 .card {
-    position: relative;
+  position: relative;
 }
 
 .infoContainer {
-    position: absolute;
-    color: #FFFFFF;
-    bottom: 0;
-    padding: 10px 25px 10px 10px;;
+  position: absolute;
+  color: #ffffff;
+  bottom: 0;
+  padding: 10px 25px 10px 10px;
 }
 
 .countryContainer {
-    padding: 10px;
+  padding: 10px;
+}
+
+.aboutCountryTitle {
+  width: 100%;
+  margin: 0;
+  margin-top: 50px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .swiperSlideContainer {
-    padding: 0 100px;
+  padding: 0 100px;
 }
 
 .videoMapContainer {
-    display: flex;
-    padding: 15px 0;
+  display: flex;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .videoContainer {
-    width: 50%;
-    padding-right: 10px;
-    height: 360px;
+  width: 50%;
+  padding-right: 10px;
+  height: 360px;
+  padding-top: 10px;
 }
 
 .mapContainer {
-    width: 50%;
-    padding-left: 10px;
-    height: 360px;
+  width: 50%;
+  padding-left: 10px;
+  height: 360px;
+  padding-top: 10px;
 }
 
 .widgetsContainer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 100px;
+  right: 70px;
+  width: 200px;
+  height: 400px;
+  z-index: 100;
+  font-size: 20px;
 }
 
 .weatherContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherText,
+.timeTittle {
+  text-align: center;
+}
+
+.countryCapital,
+.timeTittle,
+.currencyTittle {
+  margin: 10px 0;
 }
 
 .timeContainer {
-    display: flex;
-    font-size: 50px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .date {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 .watch {
-    padding-left: 10px;
-    width: 155px;
+  padding-left: 10px;
+  width: 155px;
 }
 
 .currencyContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

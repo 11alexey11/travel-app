@@ -18,7 +18,7 @@ interface CountryProps {
 
 const CountryCard: React.FC<CountryProps> = ({ capital, index, imgUrl, language, name }) => {
   return (
-    <Link to={index.toString()} className={styles.countryCard} tabIndex={0}>
+    <Link to={(index + 1).toString()} className={styles.countryCard} tabIndex={0}>
       <div className={styles.cardMask}></div>
       <img className={styles.cardImg} src={imgUrl} alt={"Photo of " + name} width="100%" />
       <div className={styles.cardInfoWrapper}>

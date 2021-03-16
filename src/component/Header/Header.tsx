@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import LanguagePannel from '../LanguagePanel/LanguagePanel';
@@ -16,11 +16,12 @@ import languages from "../../utils/languages";
 
 interface HeaderProps {
   language: string;
+  history: any;
 }
 
-const Header: React.FC<HeaderProps> = ({ language }) => {
+const Header: React.FC<HeaderProps> = ({ language, history }) => {
   return (
-    <StyledHeader className={styles.header}>
+    <StyledHeader className={styles.header} history={history}>
       <div className={styles.headerTopMask}></div>
       <div className={styles.headerTop}>
         <Link to={"/"} tabIndex={0}>
@@ -29,9 +30,11 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
           </svg>
         </Link>
         <SearchPannel />
-        <LanguagePannel />
-        <UserPanel />
-        <RegistrationPanel />
+        <div className={styles.headerRightWrapper}>
+          <UserPanel />
+          <RegistrationPanel />
+          <LanguagePannel />
+        </div>
       </div>
       <div className={styles.headerTextWrapper}>-
         <p className={styles.headerTitle}>Travel App</p>
@@ -48,4 +51,4 @@ const mapStateToProps = (state: AppState) => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

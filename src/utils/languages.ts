@@ -41,7 +41,6 @@ const languages: Lang = {
     fr: "Tapez ici pour rechercher",
   },
 
-
   errorSpanEmpty: {
     ru: "Пустые поля",
     en: "Empty fields",
@@ -52,7 +51,25 @@ const languages: Lang = {
     ru: "Пользователь не найден",
     en: "User not found",
     fr: "L'utilisateur est introuvable",
-  }
+  },
+
+  attractions: {
+    ru: "Достопримечательности",
+    en: "Attractions",
+    fr: "Attractions",
+  },
+
+  learnMore: {
+    ru: "Узнай о стране немного больше",
+    en: "Learn a little more about the country",
+    fr: "En savoir un peu plus sur le pays",
+  },
+
+  timeTittle: {
+    ru: "Местное время",
+    en: "Local time",
+    fr: "Heure locale",
+  },
 };
 
 export default languages;
