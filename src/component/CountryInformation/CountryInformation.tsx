@@ -88,19 +88,25 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
   return (
     <main className={styles.countryWrapper}>
       <div className={styles.content} >
+        <h1 className={styles.title}>{country.country}</h1>
         <div className={styles.countryInfoContainer}>
-          <div className={styles.card}>
-            <img className={styles.photo} src={country.photoUrl} alt={country.country} />
-            <div className={styles.infoContainer}>
-              <p>{country.country}</p>
-              <p>{languages.capital[language]}: {country.capital}</p>
+          <div>
+            <div className={styles.card}>
+              <div className={styles.cardMask}></div>
+              <img className={styles.photo} src={country.photoUrl} alt={country.country} />
+              <div className={styles.infoContainer}>
+                <p>{country.country}</p>
+                <p>{languages.capital[language]}: {country.capital}</p>
+              </div>
             </div>
           </div>
           <div className={styles.countryContainer}>
             <p>{country.info}</p>
           </div>
+
         </div>
         <div>
+          <h2 className={styles.aboutCountryTitle}>{languages.attractions[language]}</h2>
           <Swiper
             loop={true}
             speed={500}
@@ -123,53 +129,61 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             }
           </Swiper>
         </div>
-        <div className={styles.videoMapContainer}>
-          <div>
-            <ReactPlayer controls url={`${country.videoUrl}`} />
-          </div>
-          <div className={styles.mapContainer}>
-            <YMaps
-              query={{
-                lang: 'en_RU',
-                ns: 'use-load-option',
-                load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,geoObject.addon.balloon',
-              }}
-            >
-              <Map
-                instanceRef={mapRef}
-                defaultState={{
-                  center: [3.731845, 8.755385],
-                  zoom: 1,
-                  controls: ['zoomControl', 'fullscreenControl', 'geolocationControl', 'typeSelector'],
+        <div>
+          <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
+          <div className={styles.videoMapContainer}>
+            <div>
+              <ReactPlayer controls url={`${country.videoUrl}`} />
+            </div>
+            <div className={styles.mapContainer}>
+              <YMaps
+                query={{
+                  lang: 'en_RU',
+                  ns: 'use-load-option',
+                  load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,geoObject.addon.balloon',
                 }}
-                width='100%'
-                height='100%'
-                modules={["borders", "ObjectManager"]}
-                onLoad={(ymaps: any) => highlightCountry(ymaps, country)}
               >
-                <Placemark
-                  defaultGeometry={country.capitalCoordinates}
-                  properties={{
-                    balloonContentBody: `${country.capital}`,
+                <Map
+                  instanceRef={mapRef}
+                  defaultState={{
+                    center: [3.731845, 8.755385],
+                    zoom: 1,
+                    controls: ['zoomControl', 'fullscreenControl', 'geolocationControl', 'typeSelector'],
                   }}
-                />
-              </Map>
-            </YMaps>
+                  width='100%'
+                  height='100%'
+                  modules={["borders", "ObjectManager"]}
+                  onLoad={(ymaps: any) => highlightCountry(ymaps, country)}
+                >
+                  <Placemark
+                    defaultGeometry={country.capitalCoordinates}
+                    properties={{
+                      balloonContentBody: `${country.capital}`,
+                    }}
+                  />
+                </Map>
+              </YMaps>
+            </div>
           </div>
         </div>
         <div className={styles.widgetsContainer}>
           <div className={styles.weatherContainer}>
-            <h4>{country.capital}</h4>
-            <div>{weather.weather ? weather.weather[0].description : null}</div>
+            <h4 className={styles.countryCapital}>{country.capital}</h4>
+            <div className={styles.weatherText}>{weather.weather ? weather.weather[0].description : null}</div>
             <img src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
             <div>{weather.weather ? Math.round(weather.main.temp) : null}°C</div>
           </div>
-          <div className={styles.timeContainer}>
-            <div className={styles.date}>{getTime(country.timezone)[0].toLocaleString('ca-IT')}</div>
-            <div className={styles.watch}>{hours}:{Math.trunc(minutes / 10) === 0 ? `0${minutes}` : minutes}:{Math.trunc(seconds / 10) === 0 ? `0${seconds}` : seconds}</div>
+          <div>
+
+            <h4 className={styles.timeTittle}>{languages.timeTittle[language]}:</h4>
+            <div className={styles.timeContainer}>
+              <div className={styles.date}>{getTime(country.timezone)[0].toLocaleString('ca-IT')}</div>
+              <div className={styles.watch}>{hours}:{Math.trunc(minutes / 10) === 0 ? `0${minutes}` : minutes}:{Math.trunc(seconds / 10) === 0 ? `0${seconds}` : seconds}</div>
+            </div>
           </div>
+
           <div className={styles.currencyContainer}>
-            <h4>{country.currencyDescription}</h4>
+            <h4 className={styles.currencyTittle}>{country.currencyDescription}:</h4>
             <div>{currency.toFixed(2)} $</div>
           </div>
         </div>

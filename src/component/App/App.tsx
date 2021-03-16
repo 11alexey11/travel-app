@@ -29,7 +29,7 @@ const App: React.FC<AppProps> = ({ data, countries, language }) => {
         <Route exact path="/" component={СountriesList} />
 
         {
-          countries.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i}`} render={() => <CountryInformation country={item} />} />))
+          countries.map((item: any, i: number) => (<Route key={item.id} exact path={`/${i + 1}`} render={() => <CountryInformation country={item} />} />))
         }
 
         <Route exact path="/auth" component={RegistrationForm} />

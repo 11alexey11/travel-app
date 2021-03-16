@@ -40,6 +40,24 @@ const languages: Lang = {
     en: "Type here to search",
     fr: "Tapez ici pour rechercher",
   },
+
+  attractions: {
+    ru: "Достопримечательности",
+    en: "Attractions",
+    fr: "Attractions",
+  },
+
+  learnMore: {
+    ru: "Узнай о стране немного больше",
+    en: "Learn a little more about the country",
+    fr: "En savoir un peu plus sur le pays",
+  },
+
+  timeTittle: {
+    ru: "Местное время",
+    en: "Local time",
+    fr: "Heure locale",
+  },
 };
 
 export default languages;
