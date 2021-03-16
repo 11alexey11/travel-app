@@ -64,6 +64,26 @@
   padding: 0 100px;
 }
 
+.swiperWrapper {
+  position: relative;
+}
+
+.swiperWrapper:fullscreen {
+  background-color: #eceff1;
+}
+
+.swiperWrapper:fullscreen .swiperFullScreen{
+  display: none;
+}
+
+.swiperFullScreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .videoMapContainer {
   display: flex;
   justify-content: center;

@@ -30,6 +30,7 @@ const getTime = (timezone: number) => {
 
 const CountryInformation: React.FC<CountryInformationProps> = ({ country, language }) => {
   const mapRef: any = useRef(null);
+  const swiperRef = useRef<HTMLDivElement>(null);
   const [weather, setWeather]: any = useState([]);
   const [currency, setCurrency]: any = useState(0);
   const [hours, setHours]: any = useState(getTime(country.timezone)[1]);
@@ -116,42 +117,55 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.attractions[language]}</h2>
-          <Swiper
-            tag="section"
-            thumbs={{ swiper : thumbsSwiper }}
-            wrapperTag="ul"
-            loop={true}
-            speed={500}
-            spaceBetween={0}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-          >
-            {
-              country.attractions.map((item: any, i: number) => {
-                return (
-                  <SwiperSlide tag="li" key={i}>
-                    <img className={styles.photo} src={item.photoUrl} alt={item.name} width={600} height={400}></img>
-                    <h4>{item.name}</h4>
-                    <p >{item.info}</p>
-                  </SwiperSlide>
-                )
-              })
-            }
-          </Swiper>
+          <div className={styles.swiperWrapper} ref={swiperRef}>
+            <img
+              className={styles.swiperFullScreen}
+              src="./img/full_screen.svg"
+              alt="full screen"
+              width="30px"
+              onClick={() => {
+                if (swiperRef.current !== null) {
+                  swiperRef.current.requestFullscreen();
+                }
+              }} />
 
-          <Swiper
-            id="thumbs"
-            onSwiper={setThumbsSwiper}
-            loop={true}
-            slidesPerView={4}
-            spaceBetween={5}
-          >
-            {
-              thumbs
-            }
-          </Swiper>
+            <Swiper
+              tag="section"
+              thumbs={{ swiper: thumbsSwiper }}
+              wrapperTag="ul"
+              loop={true}
+              speed={500}
+              spaceBetween={0}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+            >
+              {
+                country.attractions.map((item: any, i: number) => {
+                  return (
+                    <SwiperSlide tag="li" key={i}>
+                      <img className={styles.photo} src={item.photoUrl} alt={item.name} width={600} height={400}></img>
+                      <h4>{item.name}</h4>
+                      <p >{item.info}</p>
+                    </SwiperSlide>
+                  )
+                })
+              }
+            </Swiper>
+
+            <Swiper
+              id="thumbs"
+              onSwiper={setThumbsSwiper}
+              loop={true}
+              slidesPerView={4}
+              spaceBetween={5}
+            >
+              {
+                thumbs
+              }
+            </Swiper>
+          </div>
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
