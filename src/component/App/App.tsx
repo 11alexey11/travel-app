@@ -8,6 +8,7 @@ import GlobalStyle from './GlobalStyle';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader.jsx';
+import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
 interface AppProps {
   data: Array<Object>,
@@ -16,6 +17,9 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ data, countries, language }) => {
+  
+
+
   if (data.length === 0 || language === null) {
     return <Loader />
   }
@@ -23,6 +27,7 @@ const App: React.FC<AppProps> = ({ data, countries, language }) => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <GlobalStyle />
         <Header />
 
