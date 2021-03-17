@@ -1,3 +1,7 @@
+p {
+  text-align: justify;
+}
+
 .countryWrapper {
   width: 100%;
   background-color: #eceff1;
@@ -19,12 +23,18 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  flex-direction: column;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .cardMask {
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: 100%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
@@ -40,6 +50,13 @@
   position: relative;
 }
 
+.photo {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 400px;
+}
+
 .infoContainer {
   position: absolute;
   color: #ffffff;
@@ -48,7 +65,7 @@
 }
 
 .countryContainer {
-  padding: 10px;
+  padding-top: 10px;
 }
 
 .aboutCountryTitle {
@@ -144,4 +161,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .widgetsContainer {
+    position: inherit;
+    flex-direction: row;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    align-items: flex-start;
+  }
+
+  .timeContainer {
+    font-size: 20px;
+  }
+
+
+  .videoMapContainer {
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    width: 100%;
+  }
+
+  .mapContainer {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 450px)  {
+  .title {
+    font-size: 2rem;
+  }
+
+  .aboutCountryTitle {
+    font-size: 1.4rem;
+  }
+
+  .widgetsContainer {
+    position: inherit;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+  }
 }

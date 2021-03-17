@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Thumbs } from 'swi
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
-import { keyWeather, keyСurrency } from '../../apiKey';
+import { keyMap, keyWeather, keyСurrency } from '../../apiKey';
 
 import RatingForm from '../RatingForm/RatingForm';
 
@@ -113,7 +113,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
       <div className={styles.content} >
         <h1 className={styles.title}>{country.country}</h1>
         <div className={styles.countryInfoContainer}>
-          <div>
+          <div className={styles.cardContainer}>
             <div className={styles.card}>
               <div className={styles.cardMask}></div>
               <img className={styles.photo} src={country.photoUrl} alt={country.country} />
@@ -187,8 +187,13 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
           <div className={styles.videoMapContainer}>
-            <div>
-              <ReactPlayer config={{ youtube: { playerVars: { origin: window.location.origin } } }} controls url={`${country.videoUrl}`} />
+            <div className={styles.videoContainer}>
+              <ReactPlayer 
+                config={{ youtube: { playerVars: { origin: window.location.origin } } }} 
+                controls 
+                url={`${country.videoUrl}`}
+                width="100%"
+              />
             </div>
             <div className={styles.mapContainer}>
               <YMaps
@@ -196,6 +201,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
                   lang: 'en_RU',
                   ns: 'use-load-option',
                   load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,geoObject.addon.balloon',
+                  apikey: keyMap
                 }}
               >
                 <Map
