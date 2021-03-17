@@ -16,6 +16,7 @@ const ActionCreator = {
   }),
 
   getData: (lang) => (dispatch) => {
+    console.log(lang);
     getData(lang).then((data) => {
       dispatch({
         type: `GET_DATA`,
@@ -35,67 +36,64 @@ const ActionCreator = {
   },
 
   getLogin: (user, isLogin) => (dispatch) => {
-    getLogin(user)
-      .then((data) => {        
-        if (data.user) {
-          localStorage.user = JSON.stringify({
-            email: data.user.email,
-            name: data.user.name,
-          });
-  
-          dispatch({
-            type: `SET_USER_NAME`,
-            payload: data.user.name
-          })
-  
-          dispatch({
-            type: `GET_LOGIN`,
-            payload: data
-          });
-  
-          dispatch({
-            type: `CHANGE_IS_LOGIN`,
-            payload: isLogin
-          });
-
-          dispatch({
-            type: `SET_ERROR`,
-            payload: 'Success'
-          });
-        } else {
-
-          dispatch({
-            type: `SET_ERROR`,
-            payload: 'Not found'
-          });
-        }
-      })
-  },
-
-  sendRegistration: (user, isLogin) => (dispatch) => {
-    sendRegistration(user)
-      .then((data) => {
-        console.log(data);
+    getLogin(user).then((data) => {
+      if (data.user) {
         localStorage.user = JSON.stringify({
-          email: data.email,
-          name: data.name,
+          email: data.user.email,
+          name: data.user.name,
         });
 
         dispatch({
           type: `SET_USER_NAME`,
-          payload: data.name
-        })
+          payload: data.user.name,
+        });
 
         dispatch({
-          type: `SEND_REGISTRATION`,
-          payload: data
+          type: `GET_LOGIN`,
+          payload: data,
         });
 
         dispatch({
           type: `CHANGE_IS_LOGIN`,
-          payload: isLogin
-        })
-      })
+          payload: isLogin,
+        });
+
+        dispatch({
+          type: `SET_ERROR`,
+          payload: "Success",
+        });
+      } else {
+        dispatch({
+          type: `SET_ERROR`,
+          payload: "Not found",
+        });
+      }
+    });
+  },
+
+  sendRegistration: (user, isLogin) => (dispatch) => {
+    sendRegistration(user).then((data) => {
+      console.log(data);
+      localStorage.user = JSON.stringify({
+        email: data.email,
+        name: data.name,
+      });
+
+      dispatch({
+        type: `SET_USER_NAME`,
+        payload: data.name,
+      });
+
+      dispatch({
+        type: `SEND_REGISTRATION`,
+        payload: data,
+      });
+
+      dispatch({
+        type: `CHANGE_IS_LOGIN`,
+        payload: isLogin,
+      });
+    });
   },
 
   setCountries: (country) => ({
@@ -105,22 +103,22 @@ const ActionCreator = {
 
   changeIsLogin: (isLogin) => ({
     type: `CHANGE_IS_LOGIN`,
-    payload: isLogin
+    payload: isLogin,
   }),
 
   changeSignIn: (isSignIn) => ({
     type: `CHANGE_IS_SIGN_IN`,
-    payload: isSignIn
+    payload: isSignIn,
   }),
 
   setUserName: (userName) => ({
     type: `SET_USER_NAME`,
-    payload: userName
+    payload: userName,
   }),
 
   setError: (error) => ({
     type: `SET_ERROR`,
-    payload: error
+    payload: error,
   }),
 };
 

@@ -18,7 +18,6 @@ const store = createStore(
 
 const userData = localStorage.user ? localStorage.user : '';
 
-store.dispatch(ActionCreator.getData("ru"));
 if (userData) {
   store.dispatch(ActionCreator.getLogin(JSON.parse(userData), true));
 }
