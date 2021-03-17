@@ -21,7 +21,7 @@ interface RatingFormProps {
 const RatingForm: React.FC<RatingFormProps> = ({ country, ratings, language }) => {
   return (
     <div className={styles.ratingList}>
-      <h3>{languages.ratings[language]}:</h3>
+      <h3 className={styles.ratingListTitle}>{languages.ratings[language]}:</h3>
       {
         ratings.map((user: any) => {
           return user.rating.map((rating: any) => {

@@ -88,6 +88,12 @@ const languages: Lang = {
     en: "Sightseeing rating",
     fr: "Classement des visites touristiques",
   },
+
+  signUpToRating: {
+    ru: "Зарегистрируйтесь чтобы оставить оценку",
+    en: "Register to leave a rating",
+    fr: "S'inscrire pour laisser un devis",
+  },
 };
 
 export default languages;

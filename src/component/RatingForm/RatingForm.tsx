@@ -32,7 +32,7 @@ const RatingForm: React.FC<RatingFormProps> = ({ user, language, country }) => {
   };
 
   if (user.name === undefined) {
-    return null;
+    return <h3 className={styles.signUpToRating}>{languages.signUpToRating[language]}</h3>;
   }
     
   return (

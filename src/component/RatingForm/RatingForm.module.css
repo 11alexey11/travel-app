@@ -9,3 +9,23 @@
 .rateSightsTitle {
   width: 100%;
 }
+
+.signUpToRating {
+  padding-left: 20px;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 450px) {
+  .rateSights {
+    padding-left: 0;
+  }
+
+  .rateSightsTitle {
+    font-size: 1.3rem;
+  }
+
+  .signUpToRating {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
