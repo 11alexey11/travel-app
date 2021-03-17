@@ -1,0 +1,52 @@
+/* стили для звездочек - https://snipp.ru/html-css/rating-css */
+
+.ratingArea {
+	overflow: hidden;
+	width: 175px;
+}
+
+.ratingArea:not(:checked) > input {
+	display: none;
+}
+
+.ratingArea:not(:checked) > label {
+	float: right;
+	width: 30px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+
+.ratingArea:not(:checked) > label:before {
+	content: '★';
+}
+
+.ratingArea > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+
+.ratingArea:not(:checked) > label:hover,
+.ratingArea:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+
+.noRating:not(:checked) > label:hover,
+.noRating:not(:checked) label:hover ~ label {
+	color: lightgray;
+}
+
+.ratingArea > input:checked + label:hover,
+.ratingArea > input:checked + label:hover ~ label,
+.ratingArea > input:checked ~ label:hover,
+.ratingArea > input:checked ~ label:hover ~ label,
+.ratingArea > label:hover ~ input:checked ~ label {
+	color: gold;
+}
+
+.rate-area > label:active {
+	position: relative;
+}

@@ -3,7 +3,8 @@ export interface AppState {
   countries: Array<Object>;
   isLogin: boolean;
   language: string,
-  user: Object
+  ratings: Array<Object>
+  user: any
 }
 
 export interface LoginState {

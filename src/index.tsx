@@ -18,17 +18,19 @@ const store = createStore(
 
 const userData = localStorage.user ? localStorage.user : '';
 
-console.log(userData);
-
 if (userData) {
   store.dispatch(ActionCreator.getLogin(JSON.parse(userData), true));
 }
 const lang = localStorage.travelAppLang ? JSON.parse(localStorage.travelAppLang) : "ru";
 
 store.dispatch(ActionCreator.getData(lang));
+store.dispatch(ActionCreator.getRating());
+
 
 ReactDOM.render(
   <Provider store={store}>
     <AppContainer />
   </Provider>,
   document.getElementById(`root`));
+
+

@@ -1,4 +1,4 @@
-.rateSights {
+.ratingList {
   display: flex ;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -6,6 +6,9 @@
   padding-left: 20px;
 }
 
-.rateSightsTitle {
+.userRating {
+  display: flex;
+  align-items: center;
   width: 100%;
+  margin: 10px 0;
 }

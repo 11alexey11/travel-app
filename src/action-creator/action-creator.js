@@ -1,4 +1,4 @@
-import { getData, getLogin, sendRegistration } from "../service";
+import { getData, getLogin, getRating, sendRegistration } from "../service";
 
 const ActionCreator = {
   changeLanguage: (language) => {
@@ -16,7 +16,6 @@ const ActionCreator = {
   }),
 
   getData: (lang) => (dispatch) => {
-    console.log(lang);
     getData(lang).then((data) => {
       dispatch({
         type: `GET_DATA`,
@@ -133,6 +132,15 @@ const ActionCreator = {
     type: `SET_ERROR`,
     payload: error,
   }),
+
+  getRating: () => (dispatch) => {
+    getRating().then((data) => {
+      dispatch({
+        type: `GET_RATING`,
+        payload: data,
+      });
+    });
+  },
 };
 
 export default ActionCreator;

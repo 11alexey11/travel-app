@@ -10,6 +10,7 @@ import { Map, Placemark, YMaps } from 'react-yandex-maps';
 import { keyWeather, keyСurrency } from '../../apiKey';
 
 import RatingForm from '../RatingForm/RatingForm';
+import RatingList from '../RatingList/RatingList';
 
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
@@ -180,8 +181,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             </Swiper>
 
           </div>
-
-          <RatingForm />
+          <RatingList country={country}/>
+          <RatingForm country={country}/>
 
         </div>
         <div>
