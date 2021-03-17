@@ -2,10 +2,12 @@ const urlRu: string = `https://travel-application-backend.herokuapp.com/countrie
 const urlEn: string = `https://travel-application-backend.herokuapp.com/countries/en`;
 const urlFr: string = `https://travel-application-backend.herokuapp.com/countries/fr`;
 
-const urlLogin : string = `https://intense-shelf-09539.herokuapp.com/login`;
-const urlRegistration : string = `https://intense-shelf-09539.herokuapp.com/register`;
+const urlLogin: string = `https://intense-shelf-09539.herokuapp.com/login`;
+const urlRegistration: string = `https://intense-shelf-09539.herokuapp.com/register`;
 
-export const getData = async (lang: string) : Promise<Array<Object>> => {
+const urlRating: string = `https://intense-shelf-09539.herokuapp.com/addScore`;
+
+export const getData = async (lang: string): Promise<Array<Object>> => {
   let url;
 
   if (lang === "ru") {
@@ -31,24 +33,37 @@ export const getData = async (lang: string) : Promise<Array<Object>> => {
 
 export const getLogin = async (user: Object) => {
   const res = await fetch(urlLogin, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   });
 
   return await res.json();
-}
+};
 
 export const sendRegistration = async (user: Object) => {
   const res = await fetch(urlRegistration, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json;charset=utf-8'
+      "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(user)
-  })
+    body: JSON.stringify(user),
+  });
 
   return await res.json();
-}
+};
+
+export const sendRating = async (countryRating: Object) => {
+  const res = await fetch(urlRating, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+      mode: "no-cors",
+    },
+    body: JSON.stringify(countryRating),
+  });
+
+  return await res.json();
+};

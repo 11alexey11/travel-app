@@ -2,7 +2,8 @@ export interface AppState {
   data: Array<Object>;
   countries: Array<Object>;
   isLogin: boolean;
-  language: string
+  language: string,
+  user: Object
 }
 
 export interface LoginState {

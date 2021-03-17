@@ -9,6 +9,8 @@ import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
 import { keyWeather, keyСurrency } from '../../apiKey';
 
+import RatingForm from '../RatingForm/RatingForm';
+
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
 
@@ -19,7 +21,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
 
 interface CountryInformationProps {
   country: any,
-  language: string
+  language: string,
 }
 
 interface options {
@@ -33,7 +35,7 @@ const getTime = (timezone: number, language: string) => {
   const d = new Date(new Date().getTime() + offset * 3600 * 1000);
   const options: options = {
     weekday: 'long',
-    month: 'long', 
+    month: 'long',
     day: 'numeric'
   };
   return [d.toLocaleDateString(language, options), d.getHours(), d.getMinutes(), d.getSeconds()];
@@ -176,7 +178,11 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
                 thumbs
               }
             </Swiper>
+
           </div>
+
+          <RatingForm />
+
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
@@ -222,8 +228,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             <img src={weather.weather ? `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
             <div>{weather.weather ? Math.round(weather.main.temp) : null}°C</div>
           </div>
-          <div>
 
+          <div>
             <h4 className={styles.timeTittle}>{languages.timeTittle[language]}:</h4>
             <div className={styles.timeContainer}>
               <div className={styles.date}>{getTime(country.timezone, language)[0]}</div>
@@ -236,6 +242,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
             <div>{currency.toFixed(2)} {country.symbolCurrency}</div>
           </div>
         </div>
+
       </div>
     </main>
   );
@@ -243,7 +250,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
 
 const mapStateToProps = (state: AppState) => {
   return {
-    language: state.language
+    language: state.language,
   };
 };
 

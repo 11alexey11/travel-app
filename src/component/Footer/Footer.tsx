@@ -22,17 +22,17 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       <div className={styles.authorsWrapper}>
         <h2 className={styles.authorsTitle}>{languages.authors[language]}:</h2>
         <ul className={styles.authors}>
-          <li>
-            <a className={styles.author} href="https://github.com/11alexey11">11alexey11</a>
+          <li className={styles.authorWrapper}>
+            <a className={styles.author} href="https://github.com/11alexey11" target="_blank" rel="noreferrer">11alexey11</a>
           </li>
-          <li>
-            <a className={styles.author} href="https://github.com/alekseishkel">alekseishkel</a>
+          <li className={styles.authorWrapper}>
+            <a className={styles.author} href="https://github.com/alekseishkel" target="_blank" rel="noreferrer">alekseishkel</a>
           </li>
-          <li>
-            <a className={styles.author} href="https://github.com/danila-cmd">danila-cmd</a>
+          <li className={styles.authorWrapper}>
+            <a className={styles.author} href="https://github.com/danila-cmd" target="_blank" rel="noreferrer">danila-cmd</a>
           </li>
-          <li>
-            <a className={styles.author} href="https://github.com/urazof">urazof</a>
+          <li className={styles.authorWrapper}>
+            <a className={styles.author} href="https://github.com/urazof" target="_blank" rel="noreferrer">urazof</a>
           </li>
         </ul>
       </div>
