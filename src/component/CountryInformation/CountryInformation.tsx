@@ -12,6 +12,8 @@ import { keyWeather, keyСurrency } from '../../apiKey';
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
 
+import fullScreen from '../../assets/img/full_screen.svg';
+
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
 
@@ -129,7 +131,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
           <div className={styles.swiperWrapper} ref={swiperRef}>
             <img
               className={styles.swiperFullScreen}
-              src="./img/full_screen.svg"
+              src={fullScreen}
               alt="full screen"
               width="30px"
               onClick={() => {
@@ -167,8 +169,8 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
               id="thumbs"
               onSwiper={setThumbsSwiper}
               loop={true}
-              slidesPerView={4}
-              spaceBetween={5}
+              slidesPerView={6}
+              spaceBetween={10}
             >
               {
                 thumbs
