@@ -1,0 +1,215 @@
+p {
+  text-align: justify;
+}
+
+.countryWrapper {
+  width: 100%;
+  background-color: #eceff1;
+}
+
+.content {
+  position: relative;
+  padding: 20px 15%;
+  padding-bottom: 70px;
+  font-size: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.countryInfoContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cardMask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(40, 40, 40, 0.4991130241158963) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.infoContainer {
+  position: absolute;
+  color: #ffffff;
+  bottom: 0;
+  padding: 10px 25px 10px 10px;
+}
+
+.countryContainer {
+  padding-top: 10px;
+}
+
+.aboutCountryTitle {
+  width: 100%;
+  margin: 0;
+  margin-top: 50px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.swiperSlideContainer {
+  padding: 0 100px;
+}
+
+.swiperWrapper {
+  position: relative;
+}
+
+.swiperWrapper:fullscreen {
+  background-color: #eceff1;
+}
+
+.swiperWrapper:fullscreen .swiperFullScreen {
+  display: none;
+}
+
+.swiperFullScreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.videoMapContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.videoContainer {
+  width: 50%;
+  padding-right: 10px;
+  height: 360px;
+  padding-top: 10px;
+}
+
+.mapContainer {
+  width: 50%;
+  padding-left: 10px;
+  height: 360px;
+}
+
+.widgetsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 100px;
+  right: 1%;
+  width: 200px;
+  height: 400px;
+  z-index: 100;
+  font-size: 20px;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherText,
+.timeTittle {
+  text-align: center;
+}
+
+.countryCapital,
+.timeTittle,
+.currencyTittle {
+  margin: 10px 0;
+}
+
+.timeContainer {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.currencyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .widgetsContainer {
+    position: inherit;
+    flex-direction: row;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    align-items: flex-start;
+  }
+
+  .timeContainer {
+    font-size: 20px;
+  }
+
+
+  .videoMapContainer {
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    width: 100%;
+  }
+
+  .mapContainer {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 450px)  {
+  .title {
+    font-size: 2rem;
+  }
+
+  .aboutCountryTitle {
+    font-size: 1.4rem;
+  }
+
+  .widgetsContainer {
+    position: inherit;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,56 @@
+.searchWrapper {
+  position: relative;
+  width: 360px;
+  height: 50px;
+}
+
+.searchImg {
+  position: absolute;
+  top: 50%;
+  right: -65px;
+  transform: translateY(-50%);
+  width: 35px;
+  cursor: pointer;
+}
+
+.removeImg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .searchWrapper {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchWrapper {
+    width: 100%;
+    order: 3;
+  }
+
+  .searchImg {
+    right: 20px;
+  }
+
+  .removeImg {
+    right: 70px;
+  }
+}
+
+@media (max-width: 454px) {
+  .searchWrapper {
+    width: 220px;
+    order: 0;
+  }
+
+  .removeImg {
+    right: 60px;
+  }
+}

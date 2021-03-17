@@ -1,0 +1,31 @@
+.rateSights {
+  display: flex ;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.rateSightsTitle {
+  width: 100%;
+}
+
+.logInToRating {
+  padding-left: 20px;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 450px) {
+  .rateSights {
+    padding-left: 0;
+  }
+
+  .rateSightsTitle {
+    font-size: 1.3rem;
+  }
+
+  .logInToRating {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,88 @@
+import React, { useState, useRef } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import styles from './SearchPanel.module.css';
+import StyledSearchPanel from './StyledSearchPanel';
+
+import ActionCreator from '../../action-creator/action-creator';
+import { AppState } from '../../interfaces';
+
+import languages from "../../utils/languages";
+
+import search from '../../assets/img/search.png';
+import remove from '../../assets/img/remove-query.png';
+
+interface SearchPanelProps {
+  findCountry: (query: string) => void,
+  language: string,
+  history: any
+}
+
+const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language, history }) => {
+  const [query, setQuery] = useState<string>("");
+  const removeImg = useRef<HTMLImageElement>(null);
+
+  const onSearchChange = (evt: React.FormEvent<HTMLInputElement>): void => {
+    if (evt.currentTarget.value.length !== 0 && removeImg.current && removeImg.current.style.display !== "block") {
+      removeImg.current.style.display = "block";
+    }
+
+    if (evt.currentTarget.value.length === 0 && removeImg.current) {
+      removeImg.current.style.display = "none";
+    }
+
+    setQuery(evt.currentTarget.value);
+    findCountry(evt.currentTarget.value);
+  }
+
+  const scrollToCountiesList = (evt: any): void => {
+    evt.preventDefault();
+
+    if (evt.key === "Enter" || evt.type === "click") {
+      document.getElementById("cardsTitleWrapper")?.scrollIntoView();
+    }
+  }
+
+  const removeQuery = (): void => {
+    setQuery("");
+    findCountry("");
+
+    if (removeImg.current) {
+      removeImg.current.style.display = "none";
+    }
+  }
+
+  if (history.location.pathname !== "/") {
+    return null;
+  }
+
+  return (
+    <div className={styles.searchWrapper}>
+      <StyledSearchPanel
+        placeholder={languages.searchPlaceholder[language]}
+        value={query}
+        autoFocus={true}
+        onChange={onSearchChange}
+        onKeyUp={scrollToCountiesList}
+      />
+      <img className={styles.searchImg} src={search} alt="search" onClick={scrollToCountiesList} />
+      <img className={styles.removeImg} src={remove} alt="search" onClick={removeQuery} ref={removeImg} />
+    </div>
+  )
+}
+
+const mapStateToProps = (state: AppState) => {
+  return {
+    countries: state.countries,
+    language: state.language
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => ({
+  findCountry: (query: string) => {
+    dispatch(ActionCreator.findCountry(query));
+  },
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchPanel));

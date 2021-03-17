@@ -1,0 +1,25 @@
+.registrationContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.registrationContainer > a {
+  padding: 0 10px;
+}
+
+.registrationElement {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+@media (max-width: 454px) {
+  .registrationContainer {
+    padding: 3px;
+  }
+}
