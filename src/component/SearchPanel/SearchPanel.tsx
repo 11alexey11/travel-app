@@ -10,6 +10,9 @@ import { AppState } from '../../interfaces';
 
 import languages from "../../utils/languages";
 
+import search from '../../assets/img/search.png';
+import remove from '../../assets/img/remove-query.png';
+
 interface SearchPanelProps {
   findCountry: (query: string) => void,
   language: string,
@@ -63,8 +66,8 @@ const SearchPanel: React.FC<SearchPanelProps> = ({ findCountry, language, histor
         onChange={onSearchChange}
         onKeyUp={scrollToCountiesList}
       />
-      <img className={styles.searchImg} src="./img/search.png" alt="search" onClick={scrollToCountiesList} />
-      <img className={styles.removeImg} src="./img/remove-query.png" alt="search" onClick={removeQuery} ref={removeImg} />
+      <img className={styles.searchImg} src={search} alt="search" onClick={scrollToCountiesList} />
+      <img className={styles.removeImg} src={remove} alt="search" onClick={removeQuery} ref={removeImg} />
     </div>
   )
 }

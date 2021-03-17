@@ -8,6 +8,8 @@ import styles from './Footer.module.css';
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
 
+import rsSchool from '../../assets/img/rs_school.svg';
+
 interface FooterProps {
   language: string;
 }
@@ -37,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       <div className={styles.footerBottom}>
         <p className={styles.footerYear}>© 2021 Travel App</p>
         <a className={styles.footerRsSchool} href="https://rs.school/js/">
-          <img src="./img/rs_school.svg" alt="RS School" width="80px" />
+          <img src={rsSchool} alt="RS School" width="80px" />
         </a>
       </div>
     </StyledFooter>

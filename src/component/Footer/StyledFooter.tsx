@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import background from '../../assets/img/background.jpg';
+
 const StyledFooter = styled.footer`
   {
     display: flex;
@@ -7,7 +9,7 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
     min-height: 300px;
     position: relative;
-    background: url('./img/background.jpg') center no-repeat; 
+    background: url('${background}') center no-repeat; 
     background-color: #00695c;
   }
 `
