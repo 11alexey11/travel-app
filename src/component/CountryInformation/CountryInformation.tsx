@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Thumbs } from 'swi
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
-import { keyWeather, keyСurrency } from '../../apiKey';
+import { keyMap, keyWeather, keyСurrency } from '../../apiKey';
 
 import RatingForm from '../RatingForm/RatingForm';
 
@@ -201,6 +201,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
                   lang: 'en_RU',
                   ns: 'use-load-option',
                   load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,geoObject.addon.balloon',
+                  apikey: keyMap
                 }}
               >
                 <Map

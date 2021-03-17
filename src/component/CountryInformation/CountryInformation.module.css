@@ -1,3 +1,7 @@
+p {
+  text-align: justify;
+}
+
 .countryWrapper {
   width: 100%;
   background-color: #eceff1;
