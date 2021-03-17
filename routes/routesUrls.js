@@ -38,8 +38,8 @@ router.post('/register', async (req, res) => {
                     }
 
 
-                    if (req.body.avatarUrl) {
-                        user.avatarUrl = ''
+                    if (req.file) {
+                        user.avatarUrl = req.file.path
                     }
 
                     const createUser = new User(user)
