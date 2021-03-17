@@ -7,6 +7,7 @@ const initialState = {
   userName: '',
   language: null,
   errorType: '',
+  ratings: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,7 +23,7 @@ const reducer = (state = initialState, action) => {
         data: action.payload,
       };
     case `GET_LOGIN`: {
-      const { user }  = action.payload
+      const { user } = action.payload
       return {
         ...state,
         user,
@@ -72,6 +73,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         errorType: action.payload
+      }
+    case `GET_RATING`:
+      return {
+        ...state,
+        ratings: action.payload
       }
     default:
       return state;

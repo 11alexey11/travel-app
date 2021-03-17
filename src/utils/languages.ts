@@ -77,10 +77,16 @@ const languages: Lang = {
     fr: "Heure locale",
   },
 
-  rating: {
+  rateSights: {
     ru: "Оцените достопримечательности",
     en: "Rate the sights",
     fr: "Évaluez les curiosités",
+  },
+
+  ratings: {
+    ru: "Рейтинг достопримечательностей",
+    en: "Sightseeing rating",
+    fr: "Classement des visites touristiques",
   },
 };
 

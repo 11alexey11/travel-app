@@ -5,7 +5,8 @@ const urlFr: string = `https://travel-application-backend.herokuapp.com/countrie
 const urlLogin: string = `https://intense-shelf-09539.herokuapp.com/login`;
 const urlRegistration: string = `https://intense-shelf-09539.herokuapp.com/register`;
 
-const urlRating: string = `https://intense-shelf-09539.herokuapp.com/addScore`;
+const urlAddRating: string = `https://intense-shelf-09539.herokuapp.com/addScore`;
+const urlGetRating: string = `https://intense-shelf-09539.herokuapp.com/getScore`;
 
 export const getData = async (lang: string): Promise<Array<Object>> => {
   let url;
@@ -56,7 +57,7 @@ export const sendRegistration = async (user: Object) => {
 };
 
 export const sendRating = async (countryRating: Object) => {
-  const res = await fetch(urlRating, {
+  const res = await fetch(urlAddRating, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -64,6 +65,16 @@ export const sendRating = async (countryRating: Object) => {
     },
     body: JSON.stringify(countryRating),
   });
+
+  return await res.json();
+};
+
+export const getRating = async () => {
+  const res = await fetch(urlGetRating);
+  
+  if (!res.ok) {
+    throw new Error(`Could not fetch ${urlGetRating}, received ${res.status}`);
+  }
 
   return await res.json();
 };
