@@ -180,7 +180,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
           <div className={styles.videoMapContainer}>
             <div>
-              <ReactPlayer controls url={`${country.videoUrl}`} />
+              <ReactPlayer config={{ youtube: { playerVars: { origin: window.location.origin } } }} controls url={`${country.videoUrl}`} />
             </div>
             <div className={styles.mapContainer}>
               <YMaps
@@ -231,7 +231,7 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
 
           <div className={styles.currencyContainer}>
             <h4 className={styles.currencyTittle}>{country.currencyDescription}:</h4>
-            <div>{currency.toFixed(2)} $</div>
+            <div>{currency.toFixed(2)} {country.symbolCurrency}</div>
           </div>
         </div>
       </div>
