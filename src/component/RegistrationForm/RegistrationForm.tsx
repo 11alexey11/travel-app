@@ -71,6 +71,8 @@ const RegistrationForm: React.FC<RegistrationPanelProps> = ({ history, language,
             setErrorDescription(languages.errorSpanFound[language]);
         } else if (errorType === 'Empty') {
             setErrorDescription(languages.errorSpanEmpty[language]);
+        } else if (errorType === 'Exist') {
+            setErrorDescription(languages.errorSpanExist[language]);
         } else if (errorType === 'Success') {
             onErrorSet('');
             history.push('/');

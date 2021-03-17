@@ -53,6 +53,12 @@ const languages: Lang = {
     fr: "L'utilisateur est introuvable",
   },
 
+  errorSpanExist: {
+    ru: "Пользователь с такой почтой существует",
+    en: "User with such mail exists",
+    fr: "Un utilisateur avec un tel courrier existe",
+  },
+
   attractions: {
     ru: "Достопримечательности",
     en: "Attractions",
