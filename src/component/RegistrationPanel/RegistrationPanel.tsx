@@ -11,9 +11,10 @@ interface RegistrationPanelProps {
     onLoginChange: (isLogin: boolean) => void;
     onSignInChange: (isSignIn: boolean) => void;
     onSignOutClick: (userName: string) => void;
+    onSetUserDefault: (user: Object) => void;
 }
 
-const RegistrationPanel: React.FC<RegistrationPanelProps> = ({ isLogin, language, onLoginChange, onSignInChange, onSignOutClick }) => {
+const RegistrationPanel: React.FC<RegistrationPanelProps> = ({ isLogin, language, onLoginChange, onSignInChange, onSignOutClick, onSetUserDefault }) => {
     return (
         <div className={styles.registrationContainer}>
             { 
@@ -21,6 +22,7 @@ const RegistrationPanel: React.FC<RegistrationPanelProps> = ({ isLogin, language
                     <Link
                         onClick={() => {
                             localStorage.removeItem('user');
+                            onSetUserDefault({});
                             onSignOutClick('');
                             onLoginChange(false);
                         }}
@@ -75,6 +77,9 @@ const mapDispatchToProps = (dispatch: any) => ({
     },
     onSignOutClick: (userName: string) => {
         dispatch(ActionCreator.setUserName(userName));
+    },
+    onSetUserDefault: (user: Object) => {
+        dispatch(ActionCreator.setUserDefault(user));
     }
 });
 

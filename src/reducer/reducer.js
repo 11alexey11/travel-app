@@ -79,6 +79,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         ratings: action.payload
       }
+    case `SET_USER_DEFAULT`:
+      return {
+        ...state,
+        user: action.payload
+      }
     default:
       return state;
   }
