@@ -59,14 +59,13 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
       .then(res => res.json())
       .then(data => setWeather(data));
 
-    // fetch(currencyURL)
-    //   .then(res => res.json())
-    //   .then(data => setCurrency(data.rates[country.currencyCode]));
+    fetch(currencyURL)
+      .then(res => res.json())
+      .then(data => setCurrency(data.rates[country.currencyCode]));
   }, [country]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // setTime(time + 1);
       setHours(getTime(country.timezone, language)[1]);
       setMinutes(getTime(country.timezone, language)[2]);
       setSeconds(getTime(country.timezone, language)[3]);
