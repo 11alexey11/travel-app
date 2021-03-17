@@ -42,6 +42,10 @@
 }
 
 @media (max-width: 768px) {
+  .countriesList {
+    padding-bottom: 20px;
+  }
+
   .cardsWrapper {
     width: 100%;
   }
@@ -52,5 +56,11 @@
 
   .cardsDescription {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 454px) {
+  .countriesList {
+    padding-bottom: 0px;
   }
 }
