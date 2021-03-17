@@ -27,8 +27,8 @@
   margin-top: 40px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .cardsWrapper {
-    width: 600px;
+    width: auto;
   }
 }

@@ -71,7 +71,7 @@
   background-color: #eceff1;
 }
 
-.swiperWrapper:fullscreen .swiperFullScreen{
+.swiperWrapper:fullscreen .swiperFullScreen {
   display: none;
 }
 
@@ -137,16 +137,7 @@
   font-size: 20px;
   justify-content: center;
   align-items: center;
-}
-
-.date {
-  padding-right: 10px;
-}
-
-.watch {
-  width: auto;
-  padding-left: 10px;
-  text-align: center;
+  flex-direction: column;
 }
 
 .currencyContainer {

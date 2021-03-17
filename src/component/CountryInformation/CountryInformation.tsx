@@ -21,12 +21,21 @@ interface CountryInformationProps {
   user: any
 }
 
-const getTime = (timezone: number) => {
+interface options {
+  [key: string]: string
+}
+
+const getTime = (timezone: number, language: string) => {
   const today = new Date();
   const localoffset = -(today.getTimezoneOffset() / 60);
   const offset = timezone - localoffset;
   const d = new Date(new Date().getTime() + offset * 3600 * 1000);
-  return [d.toLocaleDateString(), d.getHours(), d.getMinutes(), d.getSeconds()];
+  const options: options = {
+    weekday: 'long',
+    month: 'long', 
+    day: 'numeric'
+  };
+  return [d.toLocaleDateString(language, options), d.getHours(), d.getMinutes(), d.getSeconds()];
 }
 
 const CountryInformation: React.FC<CountryInformationProps> = ({ country, language, user }) => {
@@ -34,13 +43,13 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
   const swiperRef = useRef<HTMLDivElement>(null);
   const [weather, setWeather]: any = useState([]);
   const [currency, setCurrency]: any = useState(0);
-  const [hours, setHours]: any = useState(getTime(country.timezone)[1]);
-  const [minutes, setMinutes]: any = useState(getTime(country.timezone)[2]);
-  const [seconds, setSeconds]: any = useState(getTime(country.timezone)[3]);
+  const [hours, setHours]: any = useState(getTime(country.timezone, language)[1]);
+  const [minutes, setMinutes]: any = useState(getTime(country.timezone, language)[2]);
+  const [seconds, setSeconds]: any = useState(getTime(country.timezone, language)[3]);
   const [thumbsSwiper, setThumbsSwiper]: any = useState(null);
 
   useEffect(() => {
-    const weatherURL = `http://api.openweathermap.org/data/2.5/weather?id=${country.capitalIdWeather}&appid=${keyWeather}&units=metric&lang=${country.lang}`;
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?id=${country.capitalIdWeather}&appid=${keyWeather}&units=metric&lang=${country.lang}`;
     const currencyURL = `https://openexchangerates.org/api/latest.json?app_id=${keyСurrency}`;
     fetch(weatherURL)
       .then(res => res.json())
@@ -54,12 +63,12 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
   useEffect(() => {
     const interval = setInterval(() => {
       // setTime(time + 1);
-      setHours(getTime(country.timezone)[1]);
-      setMinutes(getTime(country.timezone)[2]);
-      setSeconds(getTime(country.timezone)[3]);
+      setHours(getTime(country.timezone, language)[1]);
+      setMinutes(getTime(country.timezone, language)[2]);
+      setSeconds(getTime(country.timezone, language)[3]);
     }, 1000);
     return () => clearInterval(interval);
-  }, [country]);
+  }, [country, language]);
 
   const highlightCountry = useCallback((ymaps: any, country: any) => {
     const objectManager = new ymaps.ObjectManager();
@@ -236,14 +245,14 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
           <div className={styles.weatherContainer}>
             <h4 className={styles.countryCapital}>{country.capital}</h4>
             <div className={styles.weatherText}>{weather.weather ? weather.weather[0].description : null}</div>
-            <img src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
+            <img src={weather.weather ? `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''} alt='icon' />
             <div>{weather.weather ? Math.round(weather.main.temp) : null}°C</div>
           </div>
 
           <div>
             <h4 className={styles.timeTittle}>{languages.timeTittle[language]}:</h4>
             <div className={styles.timeContainer}>
-              <div className={styles.date}>{getTime(country.timezone)[0].toLocaleString('ca-IT')}</div>
+              <div className={styles.date}>{getTime(country.timezone, language)[0]}</div>
               <div className={styles.watch}>{hours}:{Math.trunc(minutes / 10) === 0 ? `0${minutes}` : minutes}:{Math.trunc(seconds / 10) === 0 ? `0${seconds}` : seconds}</div>
             </div>
           </div>
