@@ -41,6 +41,7 @@ const ActionCreator = {
         localStorage.user = JSON.stringify({
           email: data.user.email,
           name: data.user.name,
+          password: data.user.password
         });
 
         dispatch({
@@ -73,26 +74,38 @@ const ActionCreator = {
 
   sendRegistration: (user, isLogin) => (dispatch) => {
     sendRegistration(user).then((data) => {
-      console.log(data);
-      localStorage.user = JSON.stringify({
-        email: data.email,
-        name: data.name,
-      });
-
-      dispatch({
-        type: `SET_USER_NAME`,
-        payload: data.name,
-      });
-
-      dispatch({
-        type: `SEND_REGISTRATION`,
-        payload: data,
-      });
-
-      dispatch({
-        type: `CHANGE_IS_LOGIN`,
-        payload: isLogin,
-      });
+      if (data.name) {
+        localStorage.user = JSON.stringify({
+          email: data.email,
+          name: data.name,
+          password: data.password
+        });
+  
+        dispatch({
+          type: `SET_USER_NAME`,
+          payload: data.name,
+        });
+  
+        dispatch({
+          type: `SEND_REGISTRATION`,
+          payload: data,
+        });
+  
+        dispatch({
+          type: `CHANGE_IS_LOGIN`,
+          payload: isLogin,
+        });
+  
+        dispatch({
+          type: `SET_ERROR`,
+          payload: "Success",
+        });
+      } else {
+        dispatch({
+          type: `SET_ERROR`,
+          payload: "Exist",
+        });
+      }
     });
   },
 
