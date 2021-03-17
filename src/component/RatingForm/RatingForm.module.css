@@ -10,7 +10,7 @@
   width: 100%;
 }
 
-.signUpToRating {
+.logInToRating {
   padding-left: 20px;
   font-size: 1.4rem;
 }
@@ -24,7 +24,7 @@
     font-size: 1.3rem;
   }
 
-  .signUpToRating {
+  .logInToRating {
     font-size: 1.3rem;
     text-align: center;
   }

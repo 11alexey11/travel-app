@@ -33,7 +33,7 @@ const RatingForm: React.FC<RatingFormProps> = ({ country, ratings, language }) =
                 </div>
               )
             }
-
+            return null;
           })
         })
       }
