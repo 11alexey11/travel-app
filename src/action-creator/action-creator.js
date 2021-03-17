@@ -133,6 +133,11 @@ const ActionCreator = {
     payload: error,
   }),
 
+  setUserDefault: (user) => ({
+    type: `SET_USER_DEFAULT`,
+    payload: user,
+  }),
+
   getRating: () => (dispatch) => {
     getRating().then((data) => {
       dispatch({
