@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+import headerCutter from '../../assets/img/header-cutter.png';
+
 const StyledHeaderCutter = styled.header`
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: url('./img/header-cutter.png') center no-repeat;
+  background: url(${headerCutter}) center no-repeat;
 `
 
 export default StyledHeaderCutter;
