@@ -16,6 +16,21 @@ const StyledSearchPanel = styled.input`
     &::placeholder {
       color: #fff;
     }
+
+    @media (max-width: 1300px) {
+      width: 250px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      &::placeholder {
+        font-size: 0.8rem;
+      }
+    }
   }
 `
 
