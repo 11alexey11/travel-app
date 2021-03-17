@@ -37,8 +37,8 @@ const Header: React.FC<HeaderProps> = ({ language, history }) => {
         </div>
       </div>
       <div className={styles.headerTextWrapper}>-
-        <p className={styles.headerTitle}>Travel App</p>
-        <p className={styles.headerSlogan}>{languages.headerSlogan[language]}</p>
+        <span className={styles.headerTitle}>Travel App</span>
+        <span className={styles.headerSlogan}>{languages.headerSlogan[language]}</span>
       </div>
       <StyledHeaderCutter />
     </StyledHeader>
