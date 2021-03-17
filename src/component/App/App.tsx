@@ -17,7 +17,7 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ data, countries, language }) => {
-  
+
 
 
   if (data.length === 0 || language === null) {

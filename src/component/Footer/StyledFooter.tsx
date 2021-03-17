@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
     min-height: 300px;
     position: relative;
-    background: url('/img/background.jpg') center no-repeat; 
+    background: url('./img/background.jpg') center no-repeat; 
     background-color: #00695c;
   }
 `

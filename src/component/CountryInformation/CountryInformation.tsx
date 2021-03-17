@@ -9,6 +9,8 @@ import ReactPlayer from 'react-player';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
 import { keyWeather, keyСurrency } from '../../apiKey';
 
+import RatingForm from '../RatingForm/RatingForm';
+
 import { AppState } from '../../interfaces';
 import languages from "../../utils/languages";
 
@@ -18,7 +20,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
 interface CountryInformationProps {
   country: any,
   language: string,
-  user: any
 }
 
 interface options {
@@ -32,13 +33,13 @@ const getTime = (timezone: number, language: string) => {
   const d = new Date(new Date().getTime() + offset * 3600 * 1000);
   const options: options = {
     weekday: 'long',
-    month: 'long', 
+    month: 'long',
     day: 'numeric'
   };
   return [d.toLocaleDateString(language, options), d.getHours(), d.getMinutes(), d.getSeconds()];
 }
 
-const CountryInformation: React.FC<CountryInformationProps> = ({ country, language, user }) => {
+const CountryInformation: React.FC<CountryInformationProps> = ({ country, language }) => {
   const mapRef: any = useRef(null);
   const swiperRef = useRef<HTMLDivElement>(null);
   const [weather, setWeather]: any = useState([]);
@@ -176,33 +177,10 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
               }
             </Swiper>
 
-            <div className={styles.rating}>
-              <h3>{languages.rating[language]}</h3>
-              <div>{user.name}</div>
-                <div>
-                  <input name="rating" value="5" type="radio" />
-                  <label htmlFor="5-stars" title="perfect">
-                  </label>
-
-                  <input name="rating" value="4" type="radio" />
-                  <label htmlFor="4-stars" title="good">
-                  </label>
-
-                  <input name="rating" value="3" type="radio" />
-                  <label htmlFor="3-stars" title="not bad">
-                  </label>
-
-                  <input name="rating" value="2" type="radio" />
-                  <label htmlFor="2-stars" title="badly">
-                  </label>
-
-                  <input name="rating" value="1" type="radio" />
-                  <label htmlFor="1-star" title="terribly">
-                  </label>
-                </div>
-                
-            </div>
           </div>
+
+          <RatingForm />
+
         </div>
         <div>
           <h2 className={styles.aboutCountryTitle}>{languages.learnMore[language]}</h2>
@@ -271,7 +249,6 @@ const CountryInformation: React.FC<CountryInformationProps> = ({ country, langua
 const mapStateToProps = (state: AppState) => {
   return {
     language: state.language,
-    user: state.user
   };
 };
 
